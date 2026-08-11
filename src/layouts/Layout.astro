@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Doremi Fusion | Music Studio & Recording Studio in Kolkata",
+  description = "Doremi Fusion is a music studio in Kolkata offering professional recording, music production, mixing and mastering, music classes, and jam sessions.",
+  canonical,
+} = Astro.props;
+
+const siteUrl = "https://doremifusion.in";
+const canonicalUrl = canonical
+  ? new URL(canonical, siteUrl).toString()
+  : siteUrl;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta
+      property="og:site_name"
+      content="Doremi Fusion Music Studio"
+    />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#08080a" />
+
+    <link rel="icon" href="/images/branding/doremi-logo.png" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

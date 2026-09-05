@@ -1,0 +1,1342 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const siteUrl = "https://doremifusion.in";
+
+const title = "Jam Pad in Kolkata | Doremi Fusion";
+
+const description =
+  "Rehearse, practice and make music at Doremi Fusion's Jam Pad in Kolkata, a fully equipped, soundproof space for bands and artists.";
+
+const canonical = `${siteUrl}/services/jam-pad`;
+
+const jamFeatures = [
+  {
+    number: "01",
+    title: "Band Rehearsals",
+    description:
+      "A dedicated space for bands and musicians to rehearse together, work through arrangements and prepare for performances.",
+    image: "/images/jampad/band-reharsal.png",
+    caption: "PLAY TOGETHER",
+  },
+  {
+    number: "02",
+    title: "Practice Sessions",
+    description:
+      "Use the space to work on songs, improve arrangements and spend focused time developing your performance.",
+    image: "/images/jampad/practice-session.png",
+    caption: "FOCUS ON THE MUSIC",
+  },
+  {
+    number: "03",
+    title: "Plug & Play",
+    description:
+      "A practical setup designed to make getting into a rehearsal session straightforward, so musicians can focus on playing.",
+    image: "/images/studio/p4.webp",
+    caption: "SET UP & PLAY",
+  },
+  {
+    number: "04",
+    title: "Creative Sessions",
+    description:
+      "A space where artists can experiment with ideas, develop songs and create together in a focused studio environment.",
+    image: "/images/studio/p1.webp",
+    caption: "MAKE SOMETHING TOGETHER",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Set up",
+    description:
+      "Get your instruments and setup ready so everyone can settle into the session.",
+  },
+  {
+    number: "02",
+    title: "Rehearse",
+    description:
+      "Work through songs, arrangements and performance ideas together in the space.",
+  },
+  {
+    number: "03",
+    title: "Refine",
+    description:
+      "Use the session to tighten the performance, develop ideas and move your music forward.",
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: {
+        "@id": `${siteUrl}#website`,
+      },
+      mainEntity: {
+        "@id": `${canonical}#service`,
+      },
+      breadcrumb: {
+        "@id": `${canonical}#breadcrumb`,
+      },
+    },
+
+    {
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: "Jam Pad",
+      serviceType: "Music Rehearsal Space",
+      description:
+        "A fully equipped, soundproof rehearsal space for bands and artists with a plug-and-play setup for rehearsals.",
+      url: canonical,
+      provider: {
+        "@id": `${siteUrl}#business`,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+      category: "Music Rehearsal",
+    },
+
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteUrl}#business`,
+      name: "Doremi Fusion",
+      url: siteUrl,
+      description:
+        "Music studio in Kolkata offering recording, music production, mixing and mastering, music classes and jam sessions.",
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${siteUrl}/services`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Jam Pad",
+          item: canonical,
+        },
+      ],
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: siteUrl,
+      name: "Doremi Fusion Music Studio",
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical="/services/jam-pad"
+  ogImage="/images/studio/p6.webp"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
+
+  <Navbar />
+
+  <main class="overflow-hidden bg-[#07080d] text-[#f5f5f7]">
+
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden border-b border-white/[0.10]"
+    >
+
+      <div
+        class="pointer-events-none absolute -right-56 top-10 h-[34rem] w-[34rem] rounded-full bg-[#a855f7]/[0.05] blur-[170px]"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -left-56 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#d946ef]/[0.025] blur-[160px]"
+      ></div>
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28 lg:px-10 lg:pb-40 lg:pt-32"
+      >
+
+        <!-- Breadcrumb -->
+
+        <nav
+          aria-label="Breadcrumb"
+          class="jam-reveal mb-14 sm:mb-20"
+        >
+          <ol
+            class="flex flex-wrap items-center gap-3 text-[10px] font-medium uppercase tracking-[0.24em] text-white/42 sm:text-xs sm:tracking-[0.3em]"
+          >
+            <li>
+              <a
+                href="/"
+                class="transition-colors duration-300 hover:text-white/80"
+              >
+                Home
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="text-[#c084fc]">
+              /
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="transition-colors duration-300 hover:text-white/80"
+              >
+                Services
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="text-[#c084fc]">
+              /
+            </li>
+
+            <li
+              aria-current="page"
+              class="text-white/70"
+            >
+              Jam Pad
+            </li>
+          </ol>
+        </nav>
+
+
+        <!-- Hero content -->
+
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-end">
+
+          <div class="jam-reveal lg:col-span-8">
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:mb-7 sm:text-xs sm:tracking-[0.38em]"
+            >
+              Jam Pad · Kolkata
+            </p>
+
+            <h1
+              class="max-w-5xl text-[3.25rem] font-semibold leading-[0.9] tracking-[-0.05em] text-white sm:text-6xl lg:text-[6.5rem]"
+            >
+              Make space
+
+              <span class="block text-white/55">
+                for the music<span class="text-[#d946ef]">.</span>
+              </span>
+            </h1>
+
+          </div>
+
+
+          <div
+            class="jam-reveal jam-delay-1 lg:col-span-3 lg:col-start-10"
+          >
+            <p
+              class="max-w-md text-[15px] leading-7 text-white/70 sm:text-base sm:leading-8"
+            >
+              A fully equipped, soundproof rehearsal space for bands and
+              artists, with a practical plug-and-play setup.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Hero Image -->
+
+        <div class="jam-image-reveal mt-16 sm:mt-20 lg:mt-28">
+
+          <div class="group relative overflow-hidden bg-[#121218]">
+
+            <div
+              class="absolute inset-0 z-10 bg-gradient-to-t from-black/65 via-black/5 to-transparent"
+            ></div>
+
+            <img
+              src="/images/studio/p6.webp"
+              alt="Music equipment and instruments at Doremi Fusion Music Studio in Kolkata"
+              fetchpriority="high"
+              decoding="async"
+              class="aspect-[16/9] w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+            />
+
+            <div
+              class="absolute bottom-5 left-5 z-20 flex items-center gap-3 sm:bottom-7 sm:left-7"
+            >
+              <span
+                class="h-px w-8 bg-[#c084fc]"
+              ></span>
+
+              <span
+                class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/78 sm:text-xs sm:tracking-[0.3em]"
+              >
+                The Jam Pad
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Hero meta -->
+
+        <div
+          class="jam-reveal jam-delay-2 mt-7 flex flex-col gap-4 border-t border-white/[0.1] pt-6 sm:flex-row sm:items-center sm:justify-between sm:pt-7"
+        >
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/42 sm:text-xs sm:tracking-[0.28em]"
+          >
+            Rehearsal · Practice · Collaboration
+          </p>
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/42 sm:text-xs sm:tracking-[0.28em]"
+          >
+            Doremi Fusion · Kolkata
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- INTRO -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0d0d12] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="pointer-events-none absolute -right-48 top-1/3 h-[30rem] w-[30rem] rounded-full bg-[#a855f7]/[0.035] blur-[160px]"
+      ></div>
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div class="grid gap-12 lg:grid-cols-12">
+
+          <div class="jam-reveal lg:col-span-6">
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              The rehearsal space
+            </p>
+
+            <h2
+              class="max-w-3xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.2rem]"
+            >
+              Music grows
+
+              <span class="block text-white/55">
+                when you play together<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="jam-reveal jam-delay-1 lg:col-span-4 lg:col-start-9 lg:pt-8"
+          >
+
+            <p
+              class="text-[16px] leading-8 text-white/72 sm:text-lg sm:leading-9"
+            >
+              Rehearsal is where individual parts become a performance.
+              The Jam Pad gives bands and artists a dedicated place to play,
+              experiment and work through their music together.
+            </p>
+
+            <p
+              class="mt-6 text-[15px] leading-7 text-white/55 sm:text-base sm:leading-8"
+            >
+              Whether you're preparing for a performance or simply developing
+              new material, the space is designed around the practical needs
+              of a rehearsal session.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- WHAT THE JAM PAD OFFERS -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#101016] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="pointer-events-none absolute -left-64 top-32 h-[35rem] w-[35rem] rounded-full bg-[#a855f7]/[0.025] blur-[180px]"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -right-64 bottom-32 h-[35rem] w-[35rem] rounded-full bg-[#d946ef]/[0.02] blur-[180px]"
+      ></div>
+
+
+      <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        <!-- Heading -->
+
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+
+          <div class="jam-reveal lg:col-span-7">
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              Inside the Jam Pad
+            </p>
+
+            <h2
+              class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.3rem]"
+            >
+              Four ways
+
+              <span class="block text-white/55">
+                to make it louder<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="jam-reveal jam-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+            <p
+              class="text-[15px] leading-7 text-white/62 sm:text-base sm:leading-8"
+            >
+              A space designed for musicians who need room to play, rehearse,
+              experiment and develop their sound together.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================== -->
+        <!-- ZIG ZAG FEATURES -->
+        <!-- ===================================================== -->
+
+        <div class="mt-20 sm:mt-28 lg:mt-36">
+
+          {
+            jamFeatures.map((feature, index) => {
+              const imageLeft = index % 2 === 0;
+
+              return (
+                <article
+                  class={`jam-feature-row jam-reveal ${
+                    index !== jamFeatures.length - 1
+                      ? "mb-24 sm:mb-32 lg:mb-40"
+                      : ""
+                  }`}
+                >
+
+                  {imageLeft ? (
+                    <>
+                      <!-- IMAGE LEFT -->
+
+                      <div class="jam-feature-image-wrap">
+
+                        <div class="jam-feature-frame">
+
+                          <span class="jam-corner jam-corner-top"></span>
+                          <span class="jam-corner jam-corner-side"></span>
+
+                          <div class="jam-feature-image-container">
+
+                            <img
+                              src={feature.image}
+                              alt={`${feature.title} at Doremi Fusion Music Studio in Kolkata`}
+                              loading="lazy"
+                              decoding="async"
+                              class="jam-feature-image"
+                            />
+
+                            <div
+                              class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent"
+                            ></div>
+
+                            <div
+                              class="absolute bottom-5 left-5 z-20 sm:bottom-7 sm:left-7"
+                            >
+                              <p
+                                class="max-w-[260px] text-[9px] font-medium uppercase tracking-[0.25em] text-white/85 sm:text-[10px] sm:tracking-[0.3em]"
+                              >
+                                {feature.caption}
+                              </p>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <!-- TEXT RIGHT -->
+
+                      <div class="jam-feature-content">
+
+                        <div class="mb-7 flex items-center gap-4">
+
+                          <span
+                            class="text-[10px] font-medium tracking-[0.22em] text-[#d8b4fe]"
+                          >
+                            {feature.number}
+                          </span>
+
+                          <span
+                            class="h-px w-16 bg-white/[0.18]"
+                          ></span>
+
+                        </div>
+
+                        <h3
+                          class="text-[2.4rem] font-medium leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.5rem]"
+                        >
+                          {feature.title}
+                        </h3>
+
+                        <p
+                          class="mt-6 max-w-lg text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8"
+                        >
+                          {feature.description}
+                        </p>
+
+                        <a
+                          href="/contact"
+                          class="group mt-8 inline-flex items-center gap-4 text-[9px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] transition-colors duration-300 hover:text-white sm:text-[10px]"
+                        >
+                          <span>
+                            Book a session
+                          </span>
+
+                          <span
+                            class="text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+                          >
+                            →
+                          </span>
+                        </a>
+
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <!-- TEXT LEFT -->
+
+                      <div class="jam-feature-content">
+
+                        <div class="mb-7 flex items-center gap-4">
+
+                          <span
+                            class="text-[10px] font-medium tracking-[0.22em] text-[#d8b4fe]"
+                          >
+                            {feature.number}
+                          </span>
+
+                          <span
+                            class="h-px w-16 bg-white/[0.18]"
+                          ></span>
+
+                        </div>
+
+                        <h3
+                          class="text-[2.4rem] font-medium leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl lg:text-[3.5rem]"
+                        >
+                          {feature.title}
+                        </h3>
+
+                        <p
+                          class="mt-6 max-w-lg text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8"
+                        >
+                          {feature.description}
+                        </p>
+
+                        <a
+                          href="/contact"
+                          class="group mt-8 inline-flex items-center gap-4 text-[9px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] transition-colors duration-300 hover:text-white sm:text-[10px]"
+                        >
+                          <span>
+                            Book a session
+                          </span>
+
+                          <span
+                            class="text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+                          >
+                            →
+                          </span>
+                        </a>
+
+                      </div>
+
+
+                      <!-- IMAGE RIGHT -->
+
+                      <div class="jam-feature-image-wrap">
+
+                        <div class="jam-feature-frame jam-feature-frame-right">
+
+                          <span class="jam-corner jam-corner-top jam-corner-right"></span>
+                          <span class="jam-corner jam-corner-side jam-corner-side-right"></span>
+
+                          <div class="jam-feature-image-container">
+
+                            <img
+                              src={feature.image}
+                              alt={`${feature.title} at Doremi Fusion Music Studio in Kolkata`}
+                              loading="lazy"
+                              decoding="async"
+                              class="jam-feature-image"
+                            />
+
+                            <div
+                              class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent"
+                            ></div>
+
+                            <div
+                              class="absolute bottom-5 right-5 z-20 text-right sm:bottom-7 sm:right-7"
+                            >
+                              <p
+                                class="max-w-[260px] text-[9px] font-medium uppercase tracking-[0.25em] text-white/85 sm:text-[10px] sm:tracking-[0.3em]"
+                              >
+                                {feature.caption}
+                              </p>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </>
+                  )}
+
+                </article>
+              );
+            })
+          }
+
+        </div>
+
+
+        <!-- Bottom statement -->
+
+        <div
+          class="jam-reveal mt-8 border-t border-white/[0.1] pt-8 sm:mt-12 sm:pt-10"
+        >
+
+          <div class="flex items-center gap-5">
+
+            <span
+              class="h-px w-7 bg-[#c875ff] sm:w-10"
+            ></span>
+
+            <p
+              class="text-[9px] font-medium uppercase tracking-[0.25em] text-white/55 sm:text-[10px] sm:tracking-[0.32em]"
+            >
+              Real instruments. Real sessions. Real music.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- APPROACH -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0a0a0e] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="pointer-events-none absolute -left-52 top-1/3 h-[32rem] w-[32rem] rounded-full bg-[#d946ef]/[0.025] blur-[170px]"
+      ></div>
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+
+          <div class="jam-reveal lg:col-span-5">
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              The environment
+            </p>
+
+            <h2
+              class="text-[2.6rem] font-semibold leading-[0.95] tracking-[-0.045em] text-white sm:text-4xl lg:text-[4.3rem]"
+            >
+              Find your
+
+              <span class="block text-white/55">
+                rhythm<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="jam-reveal jam-delay-1 lg:col-span-5 lg:col-start-8"
+          >
+
+            <p
+              class="text-[15px] leading-7 text-white/62 sm:text-base sm:leading-8"
+            >
+              A good rehearsal space gives musicians room to listen to each
+              other, make adjustments and develop a stronger performance.
+            </p>
+
+            <p
+              class="mt-6 text-[15px] leading-7 text-white/52 sm:text-base sm:leading-8"
+            >
+              The Jam Pad is built around that simple idea: bring your
+              instruments, bring your music and use the space to work together.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PROCESS -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden border-b border-white/[0.10] bg-[#0d0d12] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        <div class="jam-reveal mb-16">
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+          >
+            The session
+          </p>
+
+          <h2
+            class="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl"
+          >
+            From setup to
+            <span class="text-white/55">
+              the last note.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <div
+          class="grid overflow-hidden border border-white/[0.12] md:grid-cols-3"
+        >
+
+          {
+            process.map((step, index) => (
+              <article
+                class={`jam-reveal bg-[#0b0c11] p-8 sm:p-9 lg:p-11 ${
+                  index < process.length - 1
+                    ? "border-b border-white/[0.10] md:border-b-0 md:border-r"
+                    : ""
+                }`}
+              >
+
+                <span
+                  class="text-xs tracking-wider text-[#c875ff]"
+                >
+                  {step.number}
+                </span>
+
+                <h3
+                  class="mt-16 text-xl font-medium tracking-[-0.025em] text-[#f1f1f3] sm:text-2xl"
+                >
+                  {step.title}
+                </h3>
+
+                <p
+                  class="mt-4 text-sm leading-7 text-[#7f818a] sm:text-base sm:leading-8"
+                >
+                  {step.description}
+                </p>
+
+              </article>
+            ))
+          }
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- BUILT FOR -->
+    <!-- ========================================================= -->
+
+    <section
+      class="border-b border-white/[0.10] bg-[#07080d] py-24 sm:py-28 lg:py-32"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        <div class="grid gap-16 lg:grid-cols-12 lg:gap-20">
+
+          <div class="jam-reveal lg:col-span-5">
+
+            <p
+              class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+            >
+              Built for
+            </p>
+
+            <h2
+              class="mt-6 max-w-xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-white sm:text-5xl"
+            >
+              A place to
+
+              <span class="block text-[#777983]">
+                play together.
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-7"
+          >
+
+            <div class="jam-reveal border-t border-white/[0.10] pt-5">
+
+              <h3 class="font-medium text-[#f1f1f3]">
+                Bands
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+                Rehearse songs, arrangements and performances together in a
+                dedicated space.
+              </p>
+
+            </div>
+
+
+            <div class="jam-reveal border-t border-white/[0.10] pt-5">
+
+              <h3 class="font-medium text-[#f1f1f3]">
+                Artists
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+                Spend focused time developing songs and working through musical
+                ideas.
+              </p>
+
+            </div>
+
+
+            <div class="jam-reveal border-t border-white/[0.10] pt-5">
+
+              <h3 class="font-medium text-[#f1f1f3]">
+                Musicians
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+                Practice your instrument and prepare your performance in a
+                dedicated rehearsal environment.
+              </p>
+
+            </div>
+
+
+            <div class="jam-reveal border-t border-white/[0.10] pt-5">
+
+              <h3 class="font-medium text-[#f1f1f3]">
+                Creative Projects
+              </h3>
+
+              <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+                Bring musicians together to experiment, collaborate and move
+                new ideas forward.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- RELATED SERVICES -->
+    <!-- ========================================================= -->
+
+    <section
+      class="border-b border-white/[0.10] bg-[#0d0d12] py-24 sm:py-28 lg:py-32"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        <p
+          class="text-xs font-medium uppercase tracking-[0.34em] text-[#777983]"
+        >
+          Continue Exploring
+        </p>
+
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2">
+
+          <!-- Music Classes -->
+
+          <a
+            href="/services/music-classes"
+            class="group rounded-[2px] border border-white/[0.12] bg-white/[0.012] p-8 transition-all duration-300 hover:border-[#9b55c9]/50 hover:bg-white/[0.025] sm:p-10"
+          >
+
+            <span
+              class="text-xs uppercase tracking-[0.2em] text-[#666871]"
+            >
+              Service 04
+            </span>
+
+            <h3
+              class="mt-12 text-2xl font-medium tracking-[-0.025em] text-[#f1f1f3]"
+            >
+              Music Classes
+            </h3>
+
+            <p
+              class="mt-3 max-w-md text-sm leading-7 text-[#7f818a]"
+            >
+              Learn guitar, ukulele, drums and bass guitar in a focused studio
+              environment.
+            </p>
+
+            <span
+              class="mt-9 inline-block text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+            >
+              Explore service →
+            </span>
+
+          </a>
+
+
+          <!-- Recording -->
+
+          <a
+            href="/services/recording"
+            class="group rounded-[2px] border border-white/[0.12] bg-white/[0.012] p-8 transition-all duration-300 hover:border-[#9b55c9]/50 hover:bg-white/[0.025] sm:p-10"
+          >
+
+            <span
+              class="text-xs uppercase tracking-[0.2em] text-[#666871]"
+            >
+              Service 01
+            </span>
+
+            <h3
+              class="mt-12 text-2xl font-medium tracking-[-0.025em] text-[#f1f1f3]"
+            >
+              Recording
+            </h3>
+
+            <p
+              class="mt-3 max-w-md text-sm leading-7 text-[#7f818a]"
+            >
+              Capture vocals, instruments, voiceovers, dubbing and live
+              sessions.
+            </p>
+
+            <span
+              class="mt-9 inline-block text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+            >
+              Explore service →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CTA -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#08080d]"
+    >
+
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/[0.045] blur-[160px]"
+      ></div>
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32 lg:px-10 lg:py-40"
+      >
+
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-end">
+
+          <div class="jam-reveal lg:col-span-8">
+
+            <p
+              class="mb-6 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              Book the space
+            </p>
+
+            <h2
+              class="max-w-5xl text-[3.2rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl lg:text-[6rem]"
+            >
+              Ready to
+
+              <span class="block text-white/55">
+                play together<span class="text-[#d946ef]">?</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="jam-reveal jam-delay-1 lg:col-span-3 lg:col-start-10"
+          >
+
+            <p
+              class="text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8"
+            >
+              Looking for a rehearsal space in Kolkata? Get in touch with
+              Doremi Fusion and start planning your next session.
+            </p>
+
+            <a
+              href="/contact"
+              class="mt-8 inline-flex items-center gap-4 rounded-full border border-[#9b55c9]/60 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-white transition-all duration-300 hover:border-[#c875ff] hover:bg-purple-500/[0.06]"
+            >
+              Contact us
+
+              <span class="text-base text-[#c875ff]">
+                ↗
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+
+<script>
+  const revealItems = document.querySelectorAll(
+    ".jam-reveal, .jam-image-reveal"
+  );
+
+  if (revealItems.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("jam-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    revealItems.forEach((item) => {
+      observer.observe(item);
+    });
+  }
+</script>
+
+
+<style>
+  /* =========================================================
+     JAM PAD — REVEAL ANIMATION
+  ========================================================= */
+
+  .jam-reveal,
+  .jam-image-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
+  }
+
+  .jam-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .jam-delay-1 {
+    transition-delay: 100ms;
+  }
+
+  .jam-delay-2 {
+    transition-delay: 180ms;
+  }
+
+
+  /* =========================================================
+     JAM PAD — ZIG ZAG FEATURES
+  ========================================================= */
+
+  .jam-feature-row {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+
+  /* =========================================================
+     IMAGES
+  ========================================================= */
+
+  .jam-feature-image-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  .jam-feature-frame {
+    position: relative;
+    padding: 12px 0 0 12px;
+  }
+
+  .jam-feature-frame-right {
+    padding: 12px 12px 0 0;
+  }
+
+  .jam-feature-image-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b0b10;
+  }
+
+  .jam-feature-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition:
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 700ms ease;
+  }
+
+  .jam-feature-row:hover .jam-feature-image {
+    transform: scale(1.035);
+  }
+
+
+  /* =========================================================
+     DECORATIVE CORNERS
+  ========================================================= */
+
+  .jam-corner {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    pointer-events: none;
+    background: rgba(216, 180, 254, 0.6);
+  }
+
+  .jam-corner-top {
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 1px;
+  }
+
+  .jam-corner-side {
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 45%;
+  }
+
+  .jam-corner-right {
+    left: auto;
+    right: 0;
+  }
+
+  .jam-corner-side-right {
+    left: auto;
+    right: 0;
+  }
+
+
+  /* =========================================================
+     CONTENT
+  ========================================================= */
+
+  .jam-feature-content {
+    position: relative;
+    max-width: 500px;
+  }
+
+
+  /* =========================================================
+     DESKTOP
+  ========================================================= */
+
+  @media (min-width: 1024px) {
+
+    .jam-feature-row {
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+
+      gap: 5rem;
+    }
+
+  }
+
+
+  /* =========================================================
+     TABLET
+  ========================================================= */
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+
+    .jam-feature-row {
+      gap: 3rem;
+    }
+
+    .jam-feature-image {
+      aspect-ratio: 16 / 9;
+    }
+
+  }
+
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media (max-width: 639px) {
+
+    .jam-feature-row {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .jam-feature-frame,
+    .jam-feature-frame-right {
+      padding: 9px 0 0 9px;
+    }
+
+    .jam-feature-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .jam-corner-top {
+      width: 48%;
+    }
+
+    .jam-corner-side {
+      height: 42%;
+    }
+
+    .jam-feature-content {
+      padding: 0 0.25rem;
+    }
+
+  }
+
+
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .jam-reveal,
+    .jam-image-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .jam-feature-image {
+      transition: none;
+    }
+
+  }
+</style>

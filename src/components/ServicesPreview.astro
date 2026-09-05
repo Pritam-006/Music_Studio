@@ -1,27 +1,36 @@
 <section
   id="services"
-  class="relative overflow-hidden bg-[#080809] py-20 sm:py-36 lg:py-44"
+  class="relative overflow-hidden bg-[#0d0d12] py-24 sm:py-36 lg:py-44"
 >
   <!-- Ambient glow -->
   <div
-    class="pointer-events-none absolute -left-48 top-1/3 h-96 w-96 rounded-full bg-[#d946ef]/[0.035] blur-[140px]"
+    class="pointer-events-none absolute -left-48 top-1/3 h-96 w-96 rounded-full bg-[#d946ef]/[0.05] blur-[150px]"
+  ></div>
+
+  <div
+    class="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-[#a855f7]/[0.03] blur-[140px]"
   ></div>
 
   <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-    <!-- Section introduction -->
-    <div class="grid gap-8 sm:gap-10 lg:grid-cols-12 lg:items-end">
+
+    <!-- ========================================================= -->
+    <!-- SECTION INTRODUCTION -->
+    <!-- ========================================================= -->
+
+    <div class="service-reveal grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <p
-          class="mb-6 text-xs font-medium uppercase tracking-[0.38em] text-[#c084fc] sm:text-sm"
+          class="mb-5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#d8b4fe] sm:mb-6 sm:text-xs sm:tracking-[0.38em]"
         >
           What we do
         </p>
 
         <h2
-          class="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.045em] text-white sm:text-6xl lg:text-[5.8rem]"
+          class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-6xl lg:text-[5.8rem]"
         >
           Sound built
-          <span class="block text-white/35">
+
+          <span class="block text-white/68">
             around your vision<span class="text-[#d946ef]">.</span>
           </span>
         </h2>
@@ -29,7 +38,7 @@
 
       <div class="lg:col-span-4 lg:col-start-9">
         <p
-          class="max-w-md text-sm leading-7 text-white/50 sm:text-base sm:leading-8"
+          class="max-w-md text-[15px] leading-7 text-white/78 sm:text-base sm:leading-8"
         >
           From the first recording session to the final master, Doremi Fusion
           brings the tools, space and experience together to shape your sound.
@@ -37,52 +46,53 @@
       </div>
     </div>
 
-    <!-- Services -->
-    <div class="mt-14 sm:mt-24 lg:mt-28">
+
+    <!-- ========================================================= -->
+    <!-- SERVICES -->
+    <!-- ========================================================= -->
+
+    <div class="mt-16 sm:mt-24 lg:mt-28">
+
       <!-- Recording -->
       <a
-        href="/#services/recording"
-        class="group block border-t border-white/[0.10] py-7 sm:py-10 lg:py-12"
+        href="/services/recording"
+        class="service-reveal service-delay-1 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
       >
         <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-3 lg:grid-cols-12 lg:items-center lg:gap-5"
+          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
         >
-          <!-- Number -->
           <div class="row-start-1 lg:col-span-1">
             <span
-              class="text-[10px] tracking-[0.2em] text-white/25 transition-colors duration-300 group-hover:text-[#c084fc] sm:text-xs"
+              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
             >
               01
             </span>
           </div>
 
-          <!-- Title -->
           <div class="col-start-2 row-start-1 lg:col-span-5">
             <h3
-              class="text-2xl font-medium tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
+              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
             >
               Recording
             </h3>
           </div>
 
-          <!-- Description -->
           <div
             class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
           >
             <p
-              class="max-w-xl text-xs leading-6 text-white/40 transition-colors duration-300 group-hover:text-white/60 sm:text-sm sm:leading-7 lg:text-base"
+              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
             >
               Vocal recording, voiceovers, dubbing, instrumental tracking and
               live session recording in a professionally equipped studio.
             </p>
           </div>
 
-          <!-- Arrow -->
           <div
             class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
           >
             <span
-              class="inline-block text-lg text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#d946ef] sm:text-xl"
+              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
             >
               →
             </span>
@@ -90,50 +100,47 @@
         </div>
       </a>
 
+
       <!-- Music Production -->
       <a
-        href="/#services/music-production"
-        class="group block border-t border-white/[0.10] py-7 sm:py-10 lg:py-12"
+        href="/services/music-production"
+        class="service-reveal service-delay-2 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
       >
         <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-3 lg:grid-cols-12 lg:items-center lg:gap-5"
+          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
         >
-          <!-- Number -->
           <div class="row-start-1 lg:col-span-1">
             <span
-              class="text-[10px] tracking-[0.2em] text-white/25 transition-colors duration-300 group-hover:text-[#c084fc] sm:text-xs"
+              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
             >
               02
             </span>
           </div>
 
-          <!-- Title -->
           <div class="col-start-2 row-start-1 lg:col-span-5">
             <h3
-              class="text-2xl font-medium tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
+              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
             >
               Music Production
             </h3>
           </div>
 
-          <!-- Description -->
           <div
             class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
           >
             <p
-              class="max-w-xl text-xs leading-6 text-white/40 transition-colors duration-300 group-hover:text-white/60 sm:text-sm sm:leading-7 lg:text-base"
+              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
             >
               Complete music arrangement and production, including film
               scores, web-series music, short films and jingles.
             </p>
           </div>
 
-          <!-- Arrow -->
           <div
             class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
           >
             <span
-              class="inline-block text-lg text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#d946ef] sm:text-xl"
+              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
             >
               →
             </span>
@@ -141,50 +148,47 @@
         </div>
       </a>
 
+
       <!-- Mixing & Mastering -->
       <a
-        href="/#services/mixing-mastering"
-        class="group block border-t border-white/[0.10] py-7 sm:py-10 lg:py-12"
+        href="/services/mixing-mastering"
+        class="service-reveal service-delay-3 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
       >
         <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-3 lg:grid-cols-12 lg:items-center lg:gap-5"
+          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
         >
-          <!-- Number -->
           <div class="row-start-1 lg:col-span-1">
             <span
-              class="text-[10px] tracking-[0.2em] text-white/25 transition-colors duration-300 group-hover:text-[#c084fc] sm:text-xs"
+              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
             >
               03
             </span>
           </div>
 
-          <!-- Title -->
           <div class="col-start-2 row-start-1 lg:col-span-5">
             <h3
-              class="text-2xl font-medium tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
+              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
             >
               Mixing & Mastering
             </h3>
           </div>
 
-          <!-- Description -->
           <div
             class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
           >
             <p
-              class="max-w-xl text-xs leading-6 text-white/40 transition-colors duration-300 group-hover:text-white/60 sm:text-sm sm:leading-7 lg:text-base"
+              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
             >
               Professional mixing and mastering prepared for digital
               platforms including Spotify, Apple Music and YouTube.
             </p>
           </div>
 
-          <!-- Arrow -->
           <div
             class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
           >
             <span
-              class="inline-block text-lg text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#d946ef] sm:text-xl"
+              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
             >
               →
             </span>
@@ -192,50 +196,47 @@
         </div>
       </a>
 
+
       <!-- Music Classes -->
       <a
-        href="/#services/music-classes"
-        class="group block border-t border-white/[0.10] py-7 sm:py-10 lg:py-12"
+        href="/services/music-classes"
+        class="service-reveal service-delay-4 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
       >
         <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-3 lg:grid-cols-12 lg:items-center lg:gap-5"
+          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
         >
-          <!-- Number -->
           <div class="row-start-1 lg:col-span-1">
             <span
-              class="text-[10px] tracking-[0.2em] text-white/25 transition-colors duration-300 group-hover:text-[#c084fc] sm:text-xs"
+              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
             >
               04
             </span>
           </div>
 
-          <!-- Title -->
           <div class="col-start-2 row-start-1 lg:col-span-5">
             <h3
-              class="text-2xl font-medium tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
+              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
             >
               Music Classes
             </h3>
           </div>
 
-          <!-- Description -->
           <div
             class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
           >
             <p
-              class="max-w-xl text-xs leading-6 text-white/40 transition-colors duration-300 group-hover:text-white/60 sm:text-sm sm:leading-7 lg:text-base"
+              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
             >
               Learn guitar, ukulele, drums and bass guitar in a fun,
               studio-based environment with experienced instructors.
             </p>
           </div>
 
-          <!-- Arrow -->
           <div
             class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
           >
             <span
-              class="inline-block text-lg text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#d946ef] sm:text-xl"
+              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
             >
               →
             </span>
@@ -243,72 +244,150 @@
         </div>
       </a>
 
+
       <!-- Jam Pad -->
       <a
-        href="/#services/jam-pad"
-        class="group block border-y border-white/[0.10] py-7 sm:py-10 lg:py-12"
+        href="/services/jam-pad"
+        class="service-reveal service-delay-5 group block border-y border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
       >
         <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-3 lg:grid-cols-12 lg:items-center lg:gap-5"
+          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
         >
-          <!-- Number -->
           <div class="row-start-1 lg:col-span-1">
             <span
-              class="text-[10px] tracking-[0.2em] text-white/25 transition-colors duration-300 group-hover:text-[#c084fc] sm:text-xs"
+              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
             >
               05
             </span>
           </div>
 
-          <!-- Title -->
           <div class="col-start-2 row-start-1 lg:col-span-5">
             <h3
-              class="text-2xl font-medium tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
+              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
             >
               Jam Pad
             </h3>
           </div>
 
-          <!-- Description -->
           <div
             class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
           >
             <p
-              class="max-w-xl text-xs leading-6 text-white/40 transition-colors duration-300 group-hover:text-white/60 sm:text-sm sm:leading-7 lg:text-base"
+              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
             >
               A fully equipped, soundproof rehearsal space for bands and
               artists, with a plug-and-play setup for rehearsals.
             </p>
           </div>
 
-          <!-- Arrow -->
           <div
             class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
           >
             <span
-              class="inline-block text-lg text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#d946ef] sm:text-xl"
+              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
             >
               →
             </span>
           </div>
         </div>
       </a>
+
     </div>
 
-    <!-- Bottom CTA -->
-    <div class="mt-10 flex justify-end sm:mt-16">
+
+    <!-- ========================================================= -->
+    <!-- BOTTOM CTA -->
+    <!-- ========================================================= -->
+
+    <div
+      class="service-reveal service-delay-6 mt-12 flex justify-start sm:mt-16 sm:justify-end"
+    >
       <a
-        href="/#services"
-        class="group inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-white/60 transition-colors duration-300 hover:text-white sm:gap-4"
+        href="/services"
+        class="group inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em] text-white/82 transition-colors duration-300 hover:text-white sm:gap-4 sm:tracking-[0.2em]"
       >
         Explore all services
 
         <span
-          class="text-[#d946ef] transition-transform duration-300 group-hover:translate-x-1"
+          class="text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1"
         >
           →
         </span>
       </a>
     </div>
+
   </div>
 </section>
+
+
+<style>
+  .service-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+  }
+
+  .service-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-delay-1 {
+    transition-delay: 0.04s;
+  }
+
+  .service-delay-2 {
+    transition-delay: 0.08s;
+  }
+
+  .service-delay-3 {
+    transition-delay: 0.12s;
+  }
+
+  .service-delay-4 {
+    transition-delay: 0.16s;
+  }
+
+  .service-delay-5 {
+    transition-delay: 0.2s;
+  }
+
+  .service-delay-6 {
+    transition-delay: 0.12s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+
+<script>
+  const elements = document.querySelectorAll(".service-reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px",
+    },
+  );
+
+  elements.forEach((element) => observer.observe(element));
+</script>

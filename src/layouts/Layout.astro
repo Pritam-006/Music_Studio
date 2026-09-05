@@ -5,18 +5,23 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  ogImage?: string;
 }
 
 const {
   title = "Doremi Fusion | Music Studio & Recording Studio in Kolkata",
   description = "Doremi Fusion is a music studio in Kolkata offering professional recording, music production, mixing and mastering, music classes, and jam sessions.",
   canonical,
+  ogImage = "/images/studio/p2.webp",
 } = Astro.props;
 
 const siteUrl = "https://doremifusion.in";
+
 const canonicalUrl = canonical
   ? new URL(canonical, siteUrl).toString()
   : siteUrl;
+
+const ogImageUrl = new URL(ogImage, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -29,27 +34,106 @@ const canonicalUrl = canonical
       content="width=device-width, initial-scale=1.0"
     />
 
-    <meta name="description" content={description} />
+    <meta
+      name="description"
+      content={description}
+    />
 
-    <link rel="canonical" href={canonicalUrl} />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+
+    <link
+      rel="canonical"
+      href={canonicalUrl}
+    />
 
     <title>{title}</title>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+
+    <!-- ========================================================= -->
+    <!-- OPEN GRAPH -->
+    <!-- ========================================================= -->
+
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content={title}
+    />
+
+    <meta
+      property="og:description"
+      content={description}
+    />
+
+    <meta
+      property="og:url"
+      content={canonicalUrl}
+    />
+
     <meta
       property="og:site_name"
       content="Doremi Fusion Music Studio"
     />
 
-    <!-- Theme -->
-    <meta name="theme-color" content="#08080a" />
+    <meta
+      property="og:image"
+      content={ogImageUrl}
+    />
 
-    <link rel="icon" href="/images/branding/doremi-logo.png" />
+    <meta
+      property="og:image:alt"
+      content="Doremi Fusion Music Studio in Kolkata"
+    />
+
+
+    <!-- ========================================================= -->
+    <!-- TWITTER / X -->
+    <!-- ========================================================= -->
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+
+    <meta
+      name="twitter:image"
+      content={ogImageUrl}
+    />
+
+
+    <!-- Theme -->
+
+    <meta
+      name="theme-color"
+      content="#08080a"
+    />
+
+    <link
+      rel="icon"
+      href="/images/branding/doremi-logo.png"
+    />
+
+    <!-- Page-specific head content -->
+
+    <slot name="head" />
   </head>
+
 
   <body>
     <slot />

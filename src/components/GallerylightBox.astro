@@ -1,0 +1,283 @@
+---
+interface GalleryImage {
+  src: string;
+  alt: string;
+  category: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+<div
+  id="gallery-lightbox"
+  class="fixed inset-0 z-[9999] hidden bg-black/95"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Gallery image viewer"
+>
+  <!-- Close -->
+  <button
+    id="lightbox-close"
+    type="button"
+    aria-label="Close image viewer"
+    class="absolute right-5 top-5 z-[10001] flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/50 text-2xl text-white backdrop-blur-md transition hover:border-purple-400 hover:bg-purple-500/20"
+  >
+    ×
+  </button>
+
+  <!-- Previous -->
+  <button
+    id="lightbox-prev"
+    type="button"
+    aria-label="Previous image"
+    class="absolute left-4 top-1/2 z-[10001] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-2xl text-white backdrop-blur-md transition hover:border-purple-400 hover:bg-purple-500/20 md:left-8"
+  >
+    ‹
+  </button>
+
+  <!-- Next -->
+  <button
+    id="lightbox-next"
+    type="button"
+    aria-label="Next image"
+    class="absolute right-4 top-1/2 z-[10001] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-2xl text-white backdrop-blur-md transition hover:border-purple-400 hover:bg-purple-500/20 md:right-8"
+  >
+    ›
+  </button>
+
+  <!-- Image area -->
+  <div
+    id="lightbox-backdrop"
+    class="flex h-full w-full items-center justify-center p-4 pb-20 pt-16 md:p-8 md:pb-24"
+  >
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+      class="block max-h-[calc(100vh-120px)] max-w-[calc(100vw-40px)] object-contain"
+    />
+  </div>
+
+  <!-- Bottom information -->
+  <div
+    class="pointer-events-none absolute bottom-5 left-0 right-0 z-[10001] text-center"
+  >
+    <p
+      id="lightbox-category"
+      class="mb-1 text-[10px] font-medium uppercase tracking-[0.3em] text-purple-300"
+    ></p>
+
+    <p
+      id="lightbox-caption"
+      class="px-6 text-sm text-white/80"
+    ></p>
+
+    <p
+      id="lightbox-counter"
+      class="mt-2 text-xs text-white/40"
+    ></p>
+  </div>
+</div>
+
+<script define:vars={{ images }}>
+  const lightbox = document.getElementById("gallery-lightbox");
+  const image = document.getElementById("lightbox-image");
+  const closeButton = document.getElementById("lightbox-close");
+  const previousButton = document.getElementById("lightbox-prev");
+  const nextButton = document.getElementById("lightbox-next");
+  const backdrop = document.getElementById("lightbox-backdrop");
+  const category = document.getElementById("lightbox-category");
+  const caption = document.getElementById("lightbox-caption");
+  const counter = document.getElementById("lightbox-counter");
+
+  if (
+    lightbox &&
+    image &&
+    closeButton &&
+    previousButton &&
+    nextButton &&
+    backdrop
+  ) {
+    let currentIndex = 0;
+    let previousFocus = null;
+
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    function updateImage() {
+      const item = images[currentIndex];
+
+      if (!item) return;
+
+      image.src = item.src;
+      image.alt = item.alt;
+
+      if (category) {
+        category.textContent = item.category || "";
+      }
+
+      if (caption) {
+        caption.textContent = item.alt || "";
+      }
+
+      if (counter) {
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      previousFocus = document.activeElement;
+
+      updateImage();
+
+      lightbox.classList.remove("hidden");
+      lightbox.setAttribute("aria-hidden", "false");
+
+      document.body.style.overflow = "hidden";
+
+      requestAnimationFrame(() => {
+        lightbox.classList.add("lightbox-visible");
+      });
+
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("lightbox-visible");
+      lightbox.setAttribute("aria-hidden", "true");
+
+      setTimeout(() => {
+        lightbox.classList.add("hidden");
+        document.body.style.overflow = "";
+
+        if (previousFocus instanceof HTMLElement) {
+          previousFocus.focus();
+        }
+      }, 200);
+    }
+
+    function showPrevious() {
+      currentIndex =
+        (currentIndex - 1 + images.length) % images.length;
+
+      updateImage();
+    }
+
+    function showNext() {
+      currentIndex =
+        (currentIndex + 1) % images.length;
+
+      updateImage();
+    }
+
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const index = Number(
+          item.getAttribute("data-gallery-index")
+        );
+
+        if (!Number.isNaN(index)) {
+          openLightbox(index);
+        }
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    previousButton.addEventListener("click", showPrevious);
+    nextButton.addEventListener("click", showNext);
+
+    /*
+     * Clicking the dark background closes the viewer.
+     * Clicking the image itself does NOT close it.
+     */
+    backdrop.addEventListener("click", (event) => {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (lightbox.classList.contains("hidden")) return;
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+    });
+
+    /*
+     * Mobile swipe support
+     */
+    let touchStartX = 0;
+
+    image.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+
+    image.addEventListener(
+      "touchend",
+      (event) => {
+        const touchEndX = event.changedTouches[0].screenX;
+        const difference = touchEndX - touchStartX;
+
+        if (Math.abs(difference) < 50) return;
+
+        if (difference > 0) {
+          showPrevious();
+        } else {
+          showNext();
+        }
+      },
+      { passive: true }
+    );
+  }
+</script>
+
+<style>
+  #gallery-lightbox {
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  #gallery-lightbox.lightbox-visible {
+    opacity: 1;
+  }
+
+  #lightbox-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  @media (max-width: 640px) {
+    #lightbox-image {
+      max-width: calc(100vw - 24px);
+      max-height: calc(100vh - 130px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #gallery-lightbox {
+      transition: none;
+    }
+  }
+</style>

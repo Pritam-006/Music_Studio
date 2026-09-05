@@ -1,0 +1,932 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const serviceTypes = [
+  {
+    number: "01",
+    title: "Music Arrangement",
+    description:
+      "Shape the musical direction of a song through arrangement, instrumentation, structure and overall sound.",
+  },
+  {
+    number: "02",
+    title: "Film & Web Music",
+    description:
+      "Create music for films, web-series and visual projects where the music needs to support the story and atmosphere.",
+  },
+  {
+    number: "03",
+    title: "Short Film Scores",
+    description:
+      "Develop original musical ideas and arrangements that complement the emotional tone of short films and independent projects.",
+  },
+  {
+    number: "04",
+    title: "Jingles & Creative Music",
+    description:
+      "Produce concise musical pieces and arrangements for creative, promotional and branded projects.",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Understand",
+    description:
+      "We start by understanding the song, project, references and the feeling you want the music to communicate.",
+  },
+  {
+    number: "02",
+    title: "Build",
+    description:
+      "The arrangement takes shape through instrumentation, musical ideas, structure and production choices.",
+  },
+  {
+    number: "03",
+    title: "Refine",
+    description:
+      "The production is refined so that every musical element works together and supports the final vision.",
+  },
+];
+---
+
+<Layout
+  title="Music Production Studio in Kolkata | Doremi Fusion"
+  description="Doremi Fusion offers music production and arrangement in Kolkata for songs, films, web-series, short films and jingles."
+  canonical="/services/music-production"
+/>
+
+<Navbar />
+
+<main class="overflow-hidden bg-[#07080d] text-[#f5f5f7]">
+
+  <!-- ===================================================== -->
+  <!-- HERO -->
+  <!-- ===================================================== -->
+
+  <section class="relative border-b border-white/[0.10]">
+
+    <!-- Very subtle ambient glow -->
+
+    <div
+      class="pointer-events-none absolute -left-48 top-24 h-[500px] w-[500px] rounded-full bg-purple-600/[0.045] blur-[150px]"
+    ></div>
+
+    <div
+      class="pointer-events-none absolute -right-48 top-20 h-[500px] w-[500px] rounded-full bg-fuchsia-600/[0.025] blur-[150px]"
+    ></div>
+
+
+    <div
+      class="relative mx-auto max-w-7xl px-6 pb-24 pt-32 sm:px-8 sm:pb-28 lg:px-12 lg:pb-32 lg:pt-36"
+    >
+
+      <!-- Breadcrumb -->
+
+      <nav
+        aria-label="Breadcrumb"
+        class="mb-12 flex flex-wrap items-center gap-3 text-sm text-[#686a73]"
+      >
+
+        <a
+          href="/"
+          class="transition-colors duration-300 hover:text-[#f5f5f7]"
+        >
+          Home
+        </a>
+
+        <span class="text-white/20">
+          /
+        </span>
+
+        <a
+          href="/services"
+          class="transition-colors duration-300 hover:text-[#f5f5f7]"
+        >
+          Services
+        </a>
+
+        <span class="text-white/20">
+          /
+        </span>
+
+        <span class="text-[#a0a1a8]">
+          Music Production
+        </span>
+
+      </nav>
+
+
+      <!-- HERO GRID -->
+
+      <div class="grid lg:grid-cols-12 lg:gap-16">
+
+        <!-- LEFT SIDE -->
+
+        <div class="lg:col-span-8">
+
+          <p
+            class="mb-7 text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+          >
+            Music Production
+          </p>
+
+
+          <h1
+            class="max-w-[960px] text-[3.7rem] font-medium leading-[0.91] tracking-[-0.055em] text-[#f5f5f7] sm:text-6xl md:text-7xl lg:text-[6.5rem]"
+          >
+            Build the sound
+
+            <span class="block text-[#777983]">
+              behind the vision.
+            </span>
+          </h1>
+
+
+          <!-- Editorial line -->
+
+          <div class="mt-12 hidden items-center gap-7 sm:flex">
+
+            <span class="h-px w-14 shrink-0 bg-white/40"></span>
+
+            <div
+              class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[9px] uppercase tracking-[0.34em] text-[#858790]"
+            >
+
+              <span>
+                Ideas
+              </span>
+
+              <span class="text-white/20">
+                |
+              </span>
+
+              <span>
+                Arrangement
+              </span>
+
+              <span class="text-white/20">
+                |
+              </span>
+
+              <span>
+                Productions
+              </span>
+
+              <span class="text-white/20">
+                |
+              </span>
+
+              <span>
+                Real Emotion
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="mt-14 lg:col-span-4 lg:mt-10">
+
+          <div
+            class="border-l border-white/[0.22] pl-7 sm:pl-9"
+          >
+
+            <p
+              class="max-w-md text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
+            >
+              From a musical idea to a complete arrangement, Doremi Fusion
+              helps shape productions for songs, films, web-series, short
+              films and creative projects.
+            </p>
+
+          </div>
+
+
+          <a
+            href="#production"
+            class="mt-10 inline-flex items-center gap-4 rounded-full border border-[#9b55c9]/60 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#e7e7eb] transition-all duration-300 hover:border-[#c875ff] hover:bg-purple-500/[0.06]"
+          >
+
+            Explore our process
+
+            <span class="text-base text-[#c875ff]">
+              ↗
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- THE PRODUCTION -->
+  <!-- ===================================================== -->
+
+  <section
+    id="production"
+    class="border-b border-white/[0.10]"
+  >
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <div class="grid gap-16 lg:grid-cols-12 lg:gap-20">
+
+        <!-- LEFT -->
+
+        <div class="lg:col-span-5">
+
+          <p
+            class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+          >
+            The Production
+          </p>
+
+
+          <h2
+            class="mt-6 max-w-xl text-4xl font-medium leading-[1.02] tracking-[-0.045em] text-[#f5f5f7] sm:text-5xl lg:text-[4.2rem]"
+          >
+            Every production
+
+            <span class="block text-[#777983]">
+              starts with an idea.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="lg:col-span-7 lg:pt-3">
+
+          <div
+            class="max-w-2xl space-y-7 text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
+          >
+
+            <p>
+              Music production is where an idea develops into something
+              complete. It is about finding the right musical direction,
+              building the arrangement and bringing individual elements
+              together into one cohesive production.
+            </p>
+
+
+            <p>
+              At Doremi Fusion, production and arrangement are approached with
+              attention to the character of the project. Whether you are
+              working on a song, film, web-series, short film or jingle, the
+              goal is to create music that serves the project rather than
+              simply filling space.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- FEATURE IMAGE -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
+    >
+
+      <div
+        class="group relative overflow-hidden rounded-[2px] border border-white/[0.12]"
+      >
+
+        <img
+          src="/images/studio/p4.webp"
+          alt="Music production and arrangement at Doremi Fusion Music Studio in Kolkata"
+          class="h-[380px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.015] sm:h-[500px] lg:h-[640px]"
+          loading="lazy"
+        />
+
+
+        <!-- Image overlay -->
+
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent"
+        ></div>
+
+
+        <!-- Image caption -->
+
+        <div
+          class="absolute bottom-0 left-0 max-w-3xl p-7 sm:p-10 lg:p-14"
+        >
+
+          <p
+            class="text-2xl font-medium leading-tight tracking-[-0.03em] text-[#f5f5f7] sm:text-3xl lg:text-4xl"
+          >
+            Good production gives an idea the space to become a song.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- WHAT WE CREATE -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <!-- Section heading -->
+
+      <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+
+        <div class="lg:col-span-4">
+
+          <p
+            class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+          >
+            What We Create
+          </p>
+
+        </div>
+
+
+        <div class="lg:col-span-8">
+
+          <h2
+            class="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[#f5f5f7] sm:text-5xl"
+          >
+            Production shaped around the project.
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <!-- Services -->
+
+      <div
+        class="mt-16 divide-y divide-white/[0.10] border-y border-white/[0.10]"
+      >
+
+        {
+          serviceTypes.map((service) => (
+            <article
+              class="grid gap-6 py-9 sm:grid-cols-12 sm:gap-8 lg:py-11"
+            >
+
+              <!-- Number -->
+
+              <div class="sm:col-span-2">
+
+                <span class="text-xs tracking-wider text-[#666871]">
+                  {service.number}
+                </span>
+
+              </div>
+
+
+              <!-- Title -->
+
+              <div class="sm:col-span-4">
+
+                <h3
+                  class="text-xl font-medium tracking-[-0.02em] text-[#f1f1f3] sm:text-2xl"
+                >
+                  {service.title}
+                </h3>
+
+              </div>
+
+
+              <!-- Description -->
+
+              <div class="sm:col-span-6">
+
+                <p
+                  class="max-w-xl text-sm leading-7 text-[#7f818a] sm:text-base sm:leading-8"
+                >
+                  {service.description}
+                </p>
+
+              </div>
+
+            </article>
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- OUR APPROACH -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <div class="grid gap-16 lg:grid-cols-12 lg:gap-20">
+
+        <!-- LEFT -->
+
+        <div class="lg:col-span-5">
+
+          <p
+            class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+          >
+            Our Approach
+          </p>
+
+
+          <h2
+            class="mt-6 max-w-xl text-4xl font-medium leading-[1.02] tracking-[-0.045em] text-[#f5f5f7] sm:text-5xl lg:text-[4.2rem]"
+          >
+            Music should
+
+            <span class="block text-[#777983]">
+              support the story.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="lg:col-span-7 lg:pt-3">
+
+          <div
+            class="max-w-2xl space-y-7 text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
+          >
+
+            <p>
+              A strong production is not only about adding more sounds. It is
+              about understanding what the music needs. Arrangement, structure,
+              instrumentation and production decisions all work together to
+              create a distinct musical identity.
+            </p>
+
+
+            <p>
+              We work from the character of the project and develop the music
+              around that direction, keeping the process collaborative and
+              focused.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- PROCESS -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <div class="mb-16">
+
+        <p
+          class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+        >
+          The Process
+        </p>
+
+
+        <h2
+          class="mt-6 max-w-4xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[#f5f5f7] sm:text-5xl"
+        >
+          From the first idea to the finished direction.
+        </h2>
+
+      </div>
+
+
+      <!-- Process cards -->
+
+      <div
+        class="grid overflow-hidden rounded-[2px] border border-white/[0.12] md:grid-cols-3"
+      >
+
+        {
+          process.map((step, index) => (
+            <article
+              class={`bg-[#0b0c11] p-8 sm:p-9 lg:p-11 ${
+                index < process.length - 1
+                  ? "border-b border-white/[0.10] md:border-b-0 md:border-r"
+                  : ""
+              }`}
+            >
+
+              <span class="text-xs tracking-wider text-[#c875ff]">
+                {step.number}
+              </span>
+
+
+              <h3
+                class="mt-16 text-xl font-medium tracking-[-0.025em] text-[#f1f1f3] sm:text-2xl"
+              >
+                {step.title}
+              </h3>
+
+
+              <p
+                class="mt-4 text-sm leading-7 text-[#7f818a] sm:text-base sm:leading-8"
+              >
+                {step.description}
+              </p>
+
+            </article>
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- BUILT FOR -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <div class="grid gap-16 lg:grid-cols-12 lg:gap-20">
+
+        <!-- LEFT -->
+
+        <div class="lg:col-span-5">
+
+          <p
+            class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+          >
+            Built For
+          </p>
+
+
+          <h2
+            class="mt-6 max-w-xl text-4xl font-medium leading-[1.05] tracking-[-0.04em] text-[#f5f5f7] sm:text-5xl"
+          >
+            Different projects.
+
+            <span class="block text-[#777983]">
+              One focus.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div
+          class="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-7"
+        >
+
+          <div class="border-t border-white/[0.10] pt-5">
+
+            <h3 class="font-medium text-[#f1f1f3]">
+              Independent Artists
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+              Develop original songs and musical ideas into complete
+              productions.
+            </p>
+
+          </div>
+
+
+          <div class="border-t border-white/[0.10] pt-5">
+
+            <h3 class="font-medium text-[#f1f1f3]">
+              Film & Web Projects
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+              Create music and arrangements designed around visual storytelling.
+            </p>
+
+          </div>
+
+
+          <div class="border-t border-white/[0.10] pt-5">
+
+            <h3 class="font-medium text-[#f1f1f3]">
+              Short Films
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+              Build musical ideas that complement the mood and narrative of a
+              short film.
+            </p>
+
+          </div>
+
+
+          <div class="border-t border-white/[0.10] pt-5">
+
+            <h3 class="font-medium text-[#f1f1f3]">
+              Creative Projects
+            </h3>
+
+            <p class="mt-3 text-sm leading-7 text-[#7f818a]">
+              Produce jingles and other focused musical pieces for creative
+              applications.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- RELATED SERVICES -->
+  <!-- ===================================================== -->
+
+  <section class="border-b border-white/[0.10]">
+
+    <div
+      class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+    >
+
+      <p
+        class="text-xs font-medium uppercase tracking-[0.34em] text-[#777983]"
+      >
+        Continue Exploring
+      </p>
+
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2">
+
+        <!-- Recording -->
+
+        <a
+          href="/services/recording"
+          class="group rounded-[2px] border border-white/[0.12] bg-white/[0.012] p-8 transition-all duration-300 hover:border-[#9b55c9]/50 hover:bg-white/[0.025] sm:p-10"
+        >
+
+          <span
+            class="text-xs uppercase tracking-[0.2em] text-[#666871]"
+          >
+            Service 01
+          </span>
+
+
+          <h3
+            class="mt-12 text-2xl font-medium tracking-[-0.025em] text-[#f1f1f3]"
+          >
+            Recording
+          </h3>
+
+
+          <p
+            class="mt-3 max-w-md text-sm leading-7 text-[#7f818a]"
+          >
+            Capture vocals, instruments, voiceovers, dubbing and live sessions.
+          </p>
+
+
+          <span
+            class="mt-9 inline-block text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+          >
+            Explore service →
+          </span>
+
+        </a>
+
+
+        <!-- Mixing & Mastering -->
+
+        <a
+          href="/services/mixing-mastering"
+          class="group rounded-[2px] border border-white/[0.12] bg-white/[0.012] p-8 transition-all duration-300 hover:border-[#9b55c9]/50 hover:bg-white/[0.025] sm:p-10"
+        >
+
+          <span
+            class="text-xs uppercase tracking-[0.2em] text-[#666871]"
+          >
+            Service 03
+          </span>
+
+
+          <h3
+            class="mt-12 text-2xl font-medium tracking-[-0.025em] text-[#f1f1f3]"
+          >
+            Mixing & Mastering
+          </h3>
+
+
+          <p
+            class="mt-3 max-w-md text-sm leading-7 text-[#7f818a]"
+          >
+            Refine your production for a polished final sound ready for digital
+            platforms.
+          </p>
+
+
+          <span
+            class="mt-9 inline-block text-sm text-[#c875ff] transition-transform duration-300 group-hover:translate-x-1"
+          >
+            Explore service →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===================================================== -->
+  <!-- CTA -->
+  <!-- ===================================================== -->
+
+  <section class="relative overflow-hidden">
+
+    <div
+      class="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/[0.045] blur-[140px]"
+    ></div>
+
+
+    <div
+      class="relative mx-auto max-w-7xl px-6 py-28 sm:px-8 sm:py-32 lg:px-12 lg:py-40"
+    >
+
+      <p
+        class="text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+      >
+        Start A Project
+      </p>
+
+
+      <h2
+        class="mt-6 max-w-5xl text-5xl font-medium leading-[0.95] tracking-[-0.05em] text-[#f5f5f7] sm:text-6xl lg:text-7xl"
+      >
+        Have an idea?
+
+        <span class="text-[#777983]">
+          Let's shape it.
+        </span>
+      </h2>
+
+
+      <p
+        class="mt-8 max-w-xl text-base leading-8 text-[#9698a1] sm:text-lg"
+      >
+        Tell us about your song, film or creative project and let's discuss
+        where the production can go.
+      </p>
+
+
+        <a
+            href="/contact"
+            class="mt-10 inline-flex items-center gap-4 rounded-full border border-[#9b55c9]/60 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#e7e7eb] transition-all duration-300 hover:border-[#c875ff] hover:bg-purple-500/[0.06]"
+          >
+
+            Discuss Your Project
+
+            <span class="text-base text-[#c875ff]">
+              ↗
+            </span>
+
+          </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<Footer />
+
+
+<!-- ===================================================== -->
+<!-- STRUCTURED DATA -->
+<!-- ===================================================== -->
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://doremifusion.in/services/music-production",
+        "url": "https://doremifusion.in/services/music-production",
+        "name": "Music Production Studio in Kolkata | Doremi Fusion",
+        "description": "Doremi Fusion offers music production and arrangement in Kolkata for songs, films, web-series, short films and jingles.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Doremi Fusion",
+          "url": "https://doremifusion.in"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Music Production",
+        "serviceType": "Music Production",
+        "description": "Music production and arrangement for songs, films, web-series, short films and jingles.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Doremi Fusion",
+          "url": "https://doremifusion.in",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kolkata",
+            "addressRegion": "West Bengal",
+            "addressCountry": "IN"
+          }
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Kolkata"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://doremifusion.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://doremifusion.in/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Music Production",
+            "item": "https://doremifusion.in/services/music-production"
+          }
+        ]
+      }
+    ]
+  }
+</script>

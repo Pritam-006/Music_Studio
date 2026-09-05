@@ -1,0 +1,1368 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const siteUrl = "https://doremifusion.in";
+
+const title =
+  "Recording Studio in Kolkata | Doremi Fusion";
+
+const description =
+  "Record vocals, instruments, voiceovers, dubbing and live sessions at Doremi Fusion, a professional music recording studio in Kolkata.";
+
+const canonical = `${siteUrl}/services/recording`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: {
+        "@id": `${siteUrl}#website`,
+      },
+      mainEntity: {
+        "@id": `${canonical}#service`,
+      },
+      breadcrumb: {
+        "@id": `${canonical}#breadcrumb`,
+      },
+    },
+
+    {
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: "Music Recording",
+      serviceType: "Music Recording",
+      description:
+        "Professional recording for vocals, instruments, voiceovers, dubbing and live sessions at Doremi Fusion Music Studio in Kolkata.",
+      url: canonical,
+      provider: {
+        "@id": `${siteUrl}#business`,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+      category: "Music Recording",
+    },
+
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteUrl}#business`,
+      name: "Doremi Fusion",
+      url: siteUrl,
+      description:
+        "Music studio in Kolkata offering recording, music production, mixing and mastering, music classes and jam sessions.",
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${siteUrl}/services`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Recording",
+          item: canonical,
+        },
+      ],
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: siteUrl,
+      name: "Doremi Fusion Music Studio",
+    },
+  ],
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical="/services/recording"
+  ogImage="/images/studio/p3.webp"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
+
+  <Navbar />
+
+  <main>
+
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#09090f]"
+    >
+
+      <div
+        class="pointer-events-none absolute -right-56 top-10 h-[34rem] w-[34rem] rounded-full bg-[#a855f7]/[0.05] blur-[170px]"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute -left-56 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#d946ef]/[0.025] blur-[160px]"
+      ></div>
+
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 pb-24 pt-20 sm:px-8 sm:pb-32 sm:pt-28 lg:px-10 lg:pb-40 lg:pt-32"
+      >
+
+        <!-- Breadcrumb -->
+
+        <nav
+          aria-label="Breadcrumb"
+          class="recording-reveal mb-14 sm:mb-20"
+        >
+          <ol
+            class="flex flex-wrap items-center gap-3 text-[10px] font-medium uppercase tracking-[0.24em] text-white/42 sm:text-xs sm:tracking-[0.3em]"
+          >
+
+            <li>
+              <a
+                href="/"
+                class="transition-colors duration-300 hover:text-white/80"
+              >
+                Home
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="text-[#c084fc]">
+              /
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                class="transition-colors duration-300 hover:text-white/80"
+              >
+                Services
+              </a>
+            </li>
+
+            <li aria-hidden="true" class="text-[#c084fc]">
+              /
+            </li>
+
+            <li
+              aria-current="page"
+              class="text-white/70"
+            >
+              Recording
+            </li>
+
+          </ol>
+        </nav>
+
+
+        <!-- Hero -->
+
+        <div
+          class="grid gap-12 lg:grid-cols-12 lg:items-end"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-8"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:mb-7 sm:text-xs sm:tracking-[0.38em]"
+            >
+              Recording Studio · Kolkata
+            </p>
+
+
+            <h1
+              class="max-w-5xl text-[3.25rem] font-semibold leading-[0.9] tracking-[-0.05em] text-white sm:text-6xl lg:text-[6.5rem]"
+            >
+              Capture the
+
+              <span class="block text-white/58">
+                performance<span class="text-[#d946ef]">.</span>
+              </span>
+            </h1>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-3 lg:col-start-10"
+          >
+
+            <p
+              class="max-w-md text-[15px] leading-7 text-white/70 sm:text-base sm:leading-8"
+            >
+              A focused recording environment for vocals, instruments,
+              voiceovers, dubbing and live sessions.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Hero image -->
+
+        <div
+          class="recording-image-reveal mt-16 sm:mt-20 lg:mt-28"
+        >
+
+          <div
+            class="group relative overflow-hidden bg-[#121218]"
+          >
+
+            <div
+              class="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/5 to-transparent"
+            ></div>
+
+            <img
+              src="/images/studio/p3.webp"
+              alt="Microphone used for recording at Doremi Fusion Music Studio in Kolkata"
+              fetchpriority="high"
+              decoding="async"
+              class="aspect-[16/9] w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+            />
+
+            <div
+              class="absolute bottom-5 left-5 z-20 flex items-center gap-3 sm:bottom-7 sm:left-7"
+            >
+
+              <span
+                class="h-px w-8 bg-[#c084fc]"
+              ></span>
+
+              <span
+                class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/78 sm:text-xs sm:tracking-[0.3em]"
+              >
+                Recording
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Meta -->
+
+        <div
+          class="recording-reveal recording-delay-2 mt-7 flex flex-col gap-4 border-t border-white/[0.1] pt-6 sm:flex-row sm:items-center sm:justify-between sm:pt-7"
+        >
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/42 sm:text-xs sm:tracking-[0.28em]"
+          >
+            Vocals · Instruments · Voice · Live Sessions
+          </p>
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/42 sm:text-xs sm:tracking-[0.28em]"
+          >
+            Doremi Fusion · Kolkata
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- INTRO -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0d0d12] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="pointer-events-none absolute -right-48 top-1/3 h-[30rem] w-[30rem] rounded-full bg-[#a855f7]/[0.035] blur-[160px]"
+      ></div>
+
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="grid gap-12 lg:grid-cols-12"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-6"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              The recording process
+            </p>
+
+            <h2
+              class="max-w-3xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.2rem]"
+            >
+              Let the
+
+              <span class="block text-white/58">
+                performance speak<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9 lg:pt-8"
+          >
+
+            <p
+              class="text-[16px] leading-8 text-white/72 sm:text-lg sm:leading-9"
+            >
+              Recording is more than placing a microphone in front of a
+              performer. It is about creating the right environment for
+              the performance to be captured clearly and naturally.
+            </p>
+
+            <p
+              class="mt-6 text-[15px] leading-7 text-white/55 sm:text-base sm:leading-8"
+            >
+              At Doremi Fusion, recording sessions are designed around
+              the needs of the music, whether you are working on vocals,
+              instruments, spoken material or a live performance.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- WHAT WE RECORD -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#101016] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <!-- Heading -->
+
+        <div
+          class="grid gap-10 lg:grid-cols-12 lg:items-end"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-7"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              What we record
+            </p>
+
+            <h2
+              class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.3rem]"
+            >
+              Different voices.
+
+              <span class="block text-white/58">
+                Different sessions<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+
+            <p
+              class="text-[15px] leading-7 text-white/62 sm:text-base sm:leading-8"
+            >
+              The recording setup can support different types of
+              projects and performances depending on what you are
+              creating.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Services list -->
+
+        <div
+          class="mt-16 border-t border-white/[0.1] sm:mt-24"
+        >
+
+          <!-- Vocal -->
+
+          <article
+            class="recording-item group grid gap-5 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <div class="sm:col-span-1">
+              <span
+                class="text-[10px] font-medium tracking-[0.2em] text-[#d8b4fe]"
+              >
+                01
+              </span>
+            </div>
+
+            <div class="sm:col-span-4">
+              <h3
+                class="text-2xl font-medium tracking-[-0.025em] text-white sm:text-3xl"
+              >
+                Vocal Recording
+              </h3>
+            </div>
+
+            <div class="sm:col-span-6">
+              <p
+                class="max-w-xl text-[14px] leading-7 text-white/55 sm:text-[15px]"
+              >
+                Capture vocal performances with attention to clarity,
+                expression and the character of the singer.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Instruments -->
+
+          <article
+            class="recording-item group grid gap-5 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <div class="sm:col-span-1">
+              <span
+                class="text-[10px] font-medium tracking-[0.2em] text-[#d8b4fe]"
+              >
+                02
+              </span>
+            </div>
+
+            <div class="sm:col-span-4">
+              <h3
+                class="text-2xl font-medium tracking-[-0.025em] text-white sm:text-3xl"
+              >
+                Instrument Tracking
+              </h3>
+            </div>
+
+            <div class="sm:col-span-6">
+              <p
+                class="max-w-xl text-[14px] leading-7 text-white/55 sm:text-[15px]"
+              >
+                Record individual instruments as part of a song,
+                arrangement or wider production.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Voice -->
+
+          <article
+            class="recording-item group grid gap-5 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <div class="sm:col-span-1">
+              <span
+                class="text-[10px] font-medium tracking-[0.2em] text-[#d8b4fe]"
+              >
+                03
+              </span>
+            </div>
+
+            <div class="sm:col-span-4">
+              <h3
+                class="text-2xl font-medium tracking-[-0.025em] text-white sm:text-3xl"
+              >
+                Voiceovers &amp; Dubbing
+              </h3>
+            </div>
+
+            <div class="sm:col-span-6">
+              <p
+                class="max-w-xl text-[14px] leading-7 text-white/55 sm:text-[15px]"
+              >
+                Record spoken performances, voiceovers and dubbing work
+                in a controlled studio environment.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Live -->
+
+          <article
+            class="recording-item group grid gap-5 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <div class="sm:col-span-1">
+              <span
+                class="text-[10px] font-medium tracking-[0.2em] text-[#d8b4fe]"
+              >
+                04
+              </span>
+            </div>
+
+            <div class="sm:col-span-4">
+              <h3
+                class="text-2xl font-medium tracking-[-0.025em] text-white sm:text-3xl"
+              >
+                Live Session Recording
+              </h3>
+            </div>
+
+            <div class="sm:col-span-6">
+              <p
+                class="max-w-xl text-[14px] leading-7 text-white/55 sm:text-[15px]"
+              >
+                Capture the energy and interaction of a live musical
+                performance as part of a recording project.
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- STUDIO ENVIRONMENT -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0a0a0e] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="pointer-events-none absolute -left-52 top-1/3 h-[32rem] w-[32rem] rounded-full bg-[#d946ef]/[0.025] blur-[170px]"
+      ></div>
+
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="grid gap-12 lg:grid-cols-12 lg:items-center"
+        >
+
+          <!-- Image -->
+
+          <div
+            class="recording-image-reveal lg:col-span-7"
+          >
+
+            <div
+              class="group relative overflow-hidden bg-[#121218]"
+            >
+
+              <div
+                class="absolute inset-0 z-10 bg-gradient-to-t from-black/55 via-transparent to-transparent"
+              ></div>
+
+              <img
+                src="/images/studio/p1.webp"
+                alt="Recording room inside Doremi Fusion Music Studio in Kolkata"
+                loading="lazy"
+                decoding="async"
+                class="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+              />
+
+              <div
+                class="absolute bottom-5 left-5 z-20 flex items-center gap-3 sm:bottom-7 sm:left-7"
+              >
+
+                <span
+                  class="h-px w-8 bg-[#c084fc]"
+                ></span>
+
+                <span
+                  class="text-[10px] font-medium uppercase tracking-[0.22em] text-white/75 sm:text-xs sm:tracking-[0.3em]"
+                >
+                  The recording room
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Text -->
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              The environment
+            </p>
+
+            <h2
+              class="text-[2.6rem] font-semibold leading-[0.95] tracking-[-0.045em] text-white sm:text-4xl lg:text-[4.3rem]"
+            >
+              A space
+
+              <span class="block text-white/58">
+                to focus<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+            <p
+              class="mt-7 text-[15px] leading-7 text-white/62 sm:text-base sm:leading-8"
+            >
+              A good recording session needs room for concentration.
+              The studio environment is designed to keep the attention
+              on the performer and the music.
+            </p>
+
+            <p
+              class="mt-6 text-[15px] leading-7 text-white/52 sm:text-base sm:leading-8"
+            >
+              Whether the session is a single vocal take or part of a
+              larger production, the goal is the same: capture material
+              that can move the project forward.
+            </p>
+
+            <a
+              href="/gallery"
+              class="group mt-9 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em] text-white/82"
+            >
+              Explore the studio
+
+              <span
+                class="text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- HOW A SESSION WORKS -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#101016] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="grid gap-12 lg:grid-cols-12"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-7"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              The session
+            </p>
+
+            <h2
+              class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.3rem]"
+            >
+              From setup
+
+              <span class="block text-white/58">
+                to take<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+
+            <p
+              class="text-[16px] leading-8 text-white/68 sm:text-lg sm:leading-9"
+            >
+              Every recording project is different, but a focused session
+              usually moves through a simple sequence.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Process -->
+
+        <div
+          class="mt-16 grid gap-px border border-white/[0.1] bg-white/[0.1] sm:mt-24 sm:grid-cols-3"
+        >
+
+          <article
+            class="recording-card bg-[#101016] p-7 sm:p-9 lg:p-10"
+          >
+
+            <span
+              class="text-[10px] font-medium uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              01
+            </span>
+
+            <h3
+              class="mt-8 text-xl font-medium tracking-[-0.02em] text-white"
+            >
+              Prepare
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/50"
+            >
+              Discuss the project, prepare the material and get the
+              session ready for recording.
+            </p>
+
+          </article>
+
+
+          <article
+            class="recording-card bg-[#101016] p-7 sm:p-9 lg:p-10"
+          >
+
+            <span
+              class="text-[10px] font-medium uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              02
+            </span>
+
+            <h3
+              class="mt-8 text-xl font-medium tracking-[-0.02em] text-white"
+            >
+              Record
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/50"
+            >
+              Focus on the performance, capture takes and work through
+              the material as needed.
+            </p>
+
+          </article>
+
+
+          <article
+            class="recording-card bg-[#101016] p-7 sm:p-9 lg:p-10"
+          >
+
+            <span
+              class="text-[10px] font-medium uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              03
+            </span>
+
+            <h3
+              class="mt-8 text-xl font-medium tracking-[-0.02em] text-white"
+            >
+              Move forward
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/50"
+            >
+              Leave the session with recorded material ready for the
+              next stage of the project.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- WHO IT'S FOR -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0a0a0e] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="grid gap-12 lg:grid-cols-12 lg:items-start"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-6"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              Who it's for
+            </p>
+
+            <h2
+              class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.2rem]"
+            >
+              Bring the
+
+              <span class="block text-white/58">
+                performance<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+
+            <p
+              class="text-[16px] leading-8 text-white/68 sm:text-lg sm:leading-9"
+            >
+              Recording can be the first step in a project or one stage
+              of a larger production.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="mt-16 grid gap-5 sm:mt-24 sm:grid-cols-2 lg:grid-cols-4"
+        >
+
+          <article
+            class="recording-card border border-white/[0.1] p-7 transition-colors duration-500 hover:border-[#a855f7]/40 sm:p-8"
+          >
+
+            <span
+              class="text-[10px] uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              Artists
+            </span>
+
+            <h3
+              class="mt-7 text-xl font-medium text-white"
+            >
+              Singers &amp; musicians
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/48"
+            >
+              Record vocals, instruments and performances for original
+              songs and projects.
+            </p>
+
+          </article>
+
+
+          <article
+            class="recording-card border border-white/[0.1] p-7 transition-colors duration-500 hover:border-[#a855f7]/40 sm:p-8"
+          >
+
+            <span
+              class="text-[10px] uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              Creators
+            </span>
+
+            <h3
+              class="mt-7 text-xl font-medium text-white"
+            >
+              Voice projects
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/48"
+            >
+              Record voiceovers and dubbing for creative and media
+              projects.
+            </p>
+
+          </article>
+
+
+          <article
+            class="recording-card border border-white/[0.1] p-7 transition-colors duration-500 hover:border-[#a855f7]/40 sm:p-8"
+          >
+
+            <span
+              class="text-[10px] uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              Bands
+            </span>
+
+            <h3
+              class="mt-7 text-xl font-medium text-white"
+            >
+              Live performances
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/48"
+            >
+              Capture group performances and live musical sessions.
+            </p>
+
+          </article>
+
+
+          <article
+            class="recording-card border border-white/[0.1] p-7 transition-colors duration-500 hover:border-[#a855f7]/40 sm:p-8"
+          >
+
+            <span
+              class="text-[10px] uppercase tracking-[0.24em] text-[#d8b4fe]"
+            >
+              Projects
+            </span>
+
+            <h3
+              class="mt-7 text-xl font-medium text-white"
+            >
+              Production work
+            </h3>
+
+            <p
+              class="mt-4 text-sm leading-7 text-white/48"
+            >
+              Record individual parts that become part of a larger
+              music production.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- RELATED SERVICES -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#101016] py-24 sm:py-32 lg:py-40"
+    >
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="grid gap-10 lg:grid-cols-12 lg:items-end"
+        >
+
+          <div
+            class="recording-reveal lg:col-span-7"
+          >
+
+            <p
+              class="mb-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+            >
+              Continue the work
+            </p>
+
+            <h2
+              class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-5xl lg:text-[5.1rem]"
+            >
+              Recording is
+
+              <span class="block text-white/58">
+                only the beginning<span class="text-[#d946ef]">.</span>
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div
+            class="recording-reveal recording-delay-1 lg:col-span-4 lg:col-start-9"
+          >
+
+            <p
+              class="text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8"
+            >
+              Recorded material can move into production, mixing and
+              mastering as the project develops.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Related links -->
+
+        <div
+          class="mt-16 border-t border-white/[0.1] sm:mt-24"
+        >
+
+          <a
+            href="/services/music-production"
+            class="recording-link group grid gap-4 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <span
+              class="text-[10px] tracking-[0.2em] text-[#d8b4fe] sm:col-span-1"
+            >
+              02
+            </span>
+
+            <h3
+              class="text-2xl font-medium tracking-[-0.025em] text-white sm:col-span-5 sm:text-3xl"
+            >
+              Music Production
+            </h3>
+
+            <p
+              class="text-sm leading-6 text-white/45 sm:col-span-5 sm:text-[15px]"
+            >
+              Develop arrangements, sounds and ideas into a complete
+              production.
+            </p>
+
+            <span
+              class="text-lg text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1 sm:col-span-1 sm:text-right"
+              aria-hidden="true"
+            >
+              →
+            </span>
+
+          </a>
+
+
+          <a
+            href="/services/mixing-mastering"
+            class="recording-link group grid gap-4 border-b border-white/[0.1] py-8 sm:grid-cols-12 sm:items-center sm:py-10"
+          >
+
+            <span
+              class="text-[10px] tracking-[0.2em] text-[#d8b4fe] sm:col-span-1"
+            >
+              03
+            </span>
+
+            <h3
+              class="text-2xl font-medium tracking-[-0.025em] text-white sm:col-span-5 sm:text-3xl"
+            >
+              Mixing &amp; Mastering
+            </h3>
+
+            <p
+              class="text-sm leading-6 text-white/45 sm:col-span-5 sm:text-[15px]"
+            >
+              Refine the balance, dynamics and sonic character of the
+              finished recording.
+            </p>
+
+            <span
+              class="text-lg text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1 sm:col-span-1 sm:text-right"
+              aria-hidden="true"
+            >
+              →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FINAL CTA -->
+    <!-- ========================================================= -->
+
+    <section
+      class="relative overflow-hidden bg-[#0b0b11] py-28 sm:py-36 lg:py-44"
+    >
+
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a855f7]/[0.045] blur-[170px]"
+      ></div>
+
+
+      <div
+        class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"
+      >
+
+        <div
+          class="recording-reveal border-t border-white/[0.12] pt-12 sm:pt-16"
+        >
+
+          <p
+            class="text-[10px] font-medium uppercase tracking-[0.3em] text-[#d8b4fe] sm:text-xs sm:tracking-[0.38em]"
+          >
+            Ready to record?
+          </p>
+
+
+          <div
+            class="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end"
+          >
+
+            <div
+              class="lg:col-span-8"
+            >
+
+              <h2
+                class="max-w-5xl text-[3rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl lg:text-[6rem]"
+              >
+                Bring the
+
+                <span class="block text-white/58">
+                  performance<span class="text-[#d946ef]">.</span>
+                </span>
+              </h2>
+
+            </div>
+
+
+            <div
+              class="lg:col-span-3 lg:col-start-10"
+            >
+
+              <p
+                class="text-[15px] leading-7 text-white/60 sm:text-base sm:leading-8"
+              >
+                Have a recording project in mind? Tell us what you're
+                working on and start the conversation.
+              </p>
+
+
+              <a
+                href="/contact"
+                class="group mt-7 inline-flex items-center gap-3 rounded-full border border-[#a855f7]/75 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d946ef] hover:bg-[#a855f7]/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.16)] sm:text-xs"
+              >
+                Start a conversation
+
+                <span
+                  class="text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <Footer />
+</Layout>
+
+
+<style>
+  /* =========================================================
+     REVEAL SYSTEM
+  ========================================================= */
+
+  .recording-reveal,
+  .recording-image-reveal,
+  .recording-item,
+  .recording-card {
+    opacity: 0;
+  }
+
+
+  .recording-reveal,
+  .recording-item,
+  .recording-card {
+    transform: translateY(24px);
+
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+  }
+
+
+  .recording-image-reveal {
+    transform: scale(0.975);
+
+    transition:
+      opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: opacity, transform;
+  }
+
+
+  .recording-reveal.is-visible,
+  .recording-image-reveal.is-visible,
+  .recording-item.is-visible,
+  .recording-card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+
+  .recording-delay-1 {
+    transition-delay: 0.1s;
+  }
+
+
+  .recording-delay-2 {
+    transition-delay: 0.18s;
+  }
+
+
+  /* =========================================================
+     SERVICE ROW HOVER
+  ========================================================= */
+
+  .recording-item:hover h3 {
+    transform: translateX(4px);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  .recording-link:hover h3 {
+    transform: translateX(5px);
+  }
+
+
+  .recording-link h3 {
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  /* =========================================================
+     ACCESSIBILITY
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    .recording-reveal,
+    .recording-image-reveal,
+    .recording-item,
+    .recording-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .recording-link h3,
+    .recording-item h3 {
+      transition: none;
+    }
+  }
+</style>
+
+
+<script>
+  const recordingElements = document.querySelectorAll(
+    ".recording-reveal, .recording-image-reveal, .recording-item, .recording-card",
+  );
+
+  const recordingObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          recordingObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -30px 0px",
+    },
+  );
+
+
+  recordingElements.forEach((element) => {
+    recordingObserver.observe(element);
+  });
+</script>

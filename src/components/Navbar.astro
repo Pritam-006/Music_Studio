@@ -2,80 +2,85 @@
 const navItems = [
   {
     label: "About",
-    href: "/#about",
+    href: "/about",
   },
   {
     label: "Services",
-    href: "/#services",
+    href: "/services",
   },
   {
     label: "Gallery",
-    href: "/#gallery",
+    href: "/gallery",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
   },
 ];
 ---
 
 <header
-  class="relative z-50 border-b border-white/[0.06] bg-[#030304]"
+  class="navbar relative z-50 border-b border-white/[0.08] bg-[#0a0a0f]/88 backdrop-blur-xl"
 >
   <div
     class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10"
   >
-    <!-- Logo -->
+    <!-- ========================================================= -->
+    <!-- LOGO -->
+    <!-- ========================================================= -->
+
     <a
       href="/"
-      class="shrink-0 transition-opacity duration-300 hover:opacity-80"
+      class="group relative shrink-0"
       aria-label="Doremi Fusion home"
     >
       <img
         src="/images/branding/dlogo.png"
         alt="Doremi Fusion Music Studio"
-        class="h-auto w-28 object-contain sm:w-32"
+        class="h-auto w-28 object-contain transition-all duration-300 ease-out group-hover:scale-[1.02] group-hover:opacity-95 sm:w-32"
       />
     </a>
 
-    <!-- Desktop Navigation -->
+
+    <!-- ========================================================= -->
+    <!-- DESKTOP NAVIGATION -->
+    <!-- ========================================================= -->
+
     <nav
-      class="hidden items-center gap-9 md:flex"
+      class="hidden items-center gap-10 md:flex"
       aria-label="Main navigation"
     >
       {
         navItems.map((item) => (
           <a
             href={item.href}
-            class="group relative text-sm font-medium uppercase tracking-[0.14em] text-white/70 transition-colors duration-300 hover:text-white"
+            class="group relative py-2 text-sm font-medium uppercase tracking-[0.14em] text-white/65 transition-colors duration-300 hover:text-white"
           >
             {item.label}
 
+            <!-- Hover line -->
             <span
-              class="absolute -bottom-2 left-0 h-px w-0 bg-gradient-to-r from-[#a855f7] to-[#d946ef] transition-all duration-300 group-hover:w-full"
+              class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#a855f7] to-[#d946ef] transition-all duration-300 ease-out group-hover:w-full"
             ></span>
           </a>
         ))
       }
-
-      <!-- Desktop Contact -->
-      <a
-        href="/#contact"
-        class="group relative rounded-full border border-[#a855f7]/70 px-6 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 hover:border-[#d946ef] hover:shadow-[0_0_25px_rgba(168,85,247,0.22)]"
-      >
-        <span
-          class="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#a855f7]/10 to-[#d946ef]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        ></span>
-
-        Contact
-      </a>
     </nav>
 
-    <!-- Mobile Menu Button -->
-      <button
-        type="button"
-        id="mobile-menu-button"
-        class="group flex h-10 w-10 items-center justify-center text-white/80 transition-colors duration-300 hover:text-white md:hidden"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
+
+    <!-- ========================================================= -->
+    <!-- MOBILE MENU BUTTON -->
+    <!-- ========================================================= -->
+
+    <button
+      type="button"
+      id="mobile-menu-button"
+      class="group flex h-10 w-10 items-center justify-center text-white/75 transition-all duration-300 hover:text-white md:hidden"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <!-- Menu icon -->
       <svg
         id="menu-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +98,7 @@ const navItems = [
         <path d="M4 17h16" />
       </svg>
 
+      <!-- Close icon -->
       <svg
         id="close-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -112,43 +118,51 @@ const navItems = [
     </button>
   </div>
 
-  <!-- Mobile Navigation -->
+
+  <!-- ========================================================= -->
+  <!-- MOBILE NAVIGATION -->
+  <!-- ========================================================= -->
+
   <div
     id="mobile-menu"
-    class="absolute left-0 right-0 top-full hidden border-t border-white/[0.08] bg-[#050506]/95 backdrop-blur-xl md:hidden"
+    class="absolute left-0 right-0 top-full hidden overflow-hidden border-t border-white/[0.08] bg-[#0a0a0f]/[0.98] backdrop-blur-2xl md:hidden"
   >
     <nav
       class="mx-auto max-w-7xl px-5 py-7 sm:px-8"
       aria-label="Mobile navigation"
     >
       {
-        navItems.map((item) => (
+        navItems.map((item, index) => (
           <a
             href={item.href}
-            class="mobile-nav-link block border-b border-white/[0.07] py-5 text-base font-medium uppercase tracking-[0.14em] text-white/70 transition-colors duration-300 hover:text-white"
+            class="mobile-nav-link group flex items-center justify-between border-b border-white/[0.08] py-5 text-base font-medium uppercase tracking-[0.14em] text-white/70 transition-colors duration-300 hover:text-white"
+            style={`transition-delay: ${index * 50}ms`}
           >
-            {item.label}
+            <span>{item.label}</span>
+
+            <span
+              class="text-sm text-[#d8b4fe] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+            >
+              →
+            </span>
           </a>
         ))
       }
 
-      <!-- Mobile Contact -->
-      <a
-        href="/contact"
-        class="mobile-nav-link mt-6 inline-flex rounded-full border border-[#a855f7]/70 px-6 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 hover:border-[#d946ef]"
-      >
-        Contact
-      </a>
-
       <!-- Mobile footer text -->
-      <p
-        class="mt-10 text-[10px] uppercase tracking-[0.28em] text-white/25"
-      >
-        Music Studio · Kolkata
-      </p>
+      <div class="mt-9 flex items-center gap-3">
+        <span class="h-px w-7 bg-[#a855f7]/60"></span>
+
+        <p
+          class="text-[10px] font-medium uppercase tracking-[0.24em] text-white/45"
+        >
+          Music Studio · Kolkata
+        </p>
+      </div>
     </nav>
   </div>
 </header>
+
 
 <script>
   const menuButton = document.querySelector(

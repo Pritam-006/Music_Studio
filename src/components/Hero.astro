@@ -1,78 +1,98 @@
 <section
-  class="relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden bg-[#030304]"
+  class="relative flex min-h-[calc(100svh-72px)] items-start overflow-hidden bg-[#09090f] sm:items-center"
 >
   <!-- Background image -->
-  <div class="absolute inset-0">
+  <div class="absolute inset-0 overflow-hidden">
     <img
-      src="/images/studio/p1.JPG"
+      src="/images/studio/p1.webp"
       alt="Doremi Fusion music studio in Kolkata"
-      class="h-full w-full object-cover object-[60%_center] sm:object-center"
+      fetchpriority="high"
+      decoding="async"
+      class="hero-image"
     />
   </div>
 
-  <!-- Dark overlays -->
-  <div class="absolute inset-0 bg-black/65"></div>
-
+  <!-- Base cinematic overlay -->
   <div
-    class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/25"
+    class="pointer-events-none absolute inset-0 bg-black/34 sm:bg-black/42"
   ></div>
 
+  <!-- Mobile cinematic overlay -->
   <div
-    class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#030304] to-transparent"
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(9,9,15,0.18)_0%,rgba(9,9,15,0.32)_18%,rgba(9,9,15,0.68)_48%,rgba(9,9,15,0.96)_78%,#09090f_100%)] sm:hidden"
+  ></div>
+
+  <!-- Mobile left text protection -->
+  <div
+    class="pointer-events-none absolute inset-y-0 left-0 w-[88%] bg-gradient-to-r from-[#09090f]/78 via-[#09090f]/42 to-transparent sm:hidden"
+  ></div>
+
+  <!-- Desktop overlay -->
+  <div
+    class="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#09090f]/95 via-[#09090f]/68 to-[#09090f]/12 sm:block"
+  ></div>
+
+  <!-- Bottom cinematic fade -->
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-t from-[#09090f] via-[#09090f]/60 to-transparent sm:h-[48%] sm:via-[#09090f]/72"
+  ></div>
+
+  <!-- Subtle premium atmosphere -->
+  <div
+    class="pointer-events-none absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-[#a855f7]/[0.055] blur-[120px]"
   ></div>
 
   <!-- Hero content -->
   <div
-    class="relative mx-auto w-full max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:px-10"
+    class="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-24 sm:px-8 sm:py-24 lg:px-10"
   >
-    <div class="max-w-4xl">
-
+    <div class="w-full max-w-4xl">
       <!-- Eyebrow -->
       <p
-        class="mb-8 text-xs font-medium uppercase tracking-[0.38em] text-[#c084fc] sm:text-sm"
+        class="hero-eyebrow mb-5 text-[10px] font-medium uppercase tracking-[0.25em] text-[#d8b4fe] sm:mb-8 sm:text-xs sm:tracking-[0.38em]"
       >
         Music Studio · Kolkata
       </p>
 
       <!-- Heading -->
       <h1
-        class="text-5xl font-semibold leading-[0.92] tracking-[-0.045em] text-white sm:text-6xl lg:text-[6.1rem]"
+        class="hero-heading max-w-[19rem] text-[2.65rem] font-semibold leading-[0.95] tracking-[-0.045em] text-white sm:max-w-none sm:text-6xl lg:text-[6.1rem]"
       >
         Music is more
 
-        <span class="block text-white/45">
+        <span class="block text-white/72">
           than sound<span class="text-[#d946ef]">.</span>
         </span>
       </h1>
 
       <!-- Description -->
       <p
-        class="mt-7 max-w-[21rem] text-base leading-7 text-white/60 sm:mt-8 sm:max-w-xl sm:text-lg sm:leading-8"
+        class="hero-description mt-6 max-w-[21rem] text-[14px] leading-6 text-white/88 sm:mt-8 sm:max-w-xl sm:text-lg sm:leading-8"
       >
         Recording, music production, mixing, mastering and musical
-        experiences crafted at <span class="text-white">Doremi Fusion.</span>
+        experiences crafted at <span class="font-medium text-white">Doremi Fusion.</span>
       </p>
 
       <!-- Actions -->
       <div
-        class="mt-9 flex flex-col items-start gap-3 sm:mt-10 sm:flex-row sm:gap-4"
+        class="hero-actions mt-8 flex flex-col items-start gap-3 sm:mt-10 sm:flex-row sm:gap-4"
       >
         <a
           href="/#services"
-          class="group inline-flex items-center gap-3 rounded-full border border-[#a855f7] px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-[#a855f7]/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.18)]"
+          class="group inline-flex items-center gap-3 rounded-full border border-[#a855f7]/90 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d946ef] hover:bg-[#a855f7]/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] sm:text-xs"
         >
           Explore the studio
 
           <span
-            class="text-[#d946ef] transition-transform duration-300 group-hover:translate-x-1"
+            class="text-[#e879f9] transition-transform duration-300 group-hover:translate-x-1"
           >
             →
           </span>
         </a>
 
         <a
-          href="/#contact"
-          class="inline-flex items-center rounded-full border border-white/15 px-6 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white/90 transition-all duration-300 hover:border-white/30 hover:bg-white/5"
+          href="/contact"
+          class="inline-flex items-center rounded-full border border-white/30 px-6 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/[0.08] sm:text-xs"
         >
           Get in touch
         </a>
@@ -81,19 +101,177 @@
 
     <!-- Bottom metadata -->
     <div
-      class="mt-14 flex items-center justify-between border-t border-white/[0.08] pt-5 sm:mt-24"
+      class="hero-meta mt-12 flex items-center justify-between border-t border-white/[0.13] pt-5 sm:mt-24"
     >
       <span
-        class="border-l border-[#c084fc] pl-4 text-[10px] uppercase tracking-[0.28em] text-white/40 sm:text-xs"
+        class="border-l border-[#c084fc] pl-4 text-[9px] font-medium uppercase tracking-[0.17em] text-white/75 sm:text-xs sm:tracking-[0.28em]"
       >
         Where Musical Dreams Become Reality
       </span>
 
       <span
-        class="hidden text-[10px] uppercase tracking-[0.28em] text-white/35 sm:block"
+        class="hidden text-[11px] font-medium uppercase tracking-[0.24em] text-white/65 sm:block"
       >
         Kolkata, India
       </span>
     </div>
   </div>
 </section>
+
+<style>
+  /* =========================================================
+     HERO IMAGE
+  ========================================================= */
+
+  .hero-image {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    animation: hero-image-reveal 1.6s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      both;
+
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+
+  /* =========================================================
+     MOBILE IMAGE COMPOSITION
+  ========================================================= */
+
+  @media (max-width: 639px) {
+    .hero-image {
+      /*
+       * Mobile intentionally uses a different composition
+       * from desktop.
+       *
+       * The image is positioned toward the upper-right
+       * so the densest studio details don't sit directly
+       * behind the main text.
+       */
+      object-position: 62% 8%;
+
+      /*
+       * Slight zoom creates a more cinematic crop
+       * without making the studio image feel squeezed.
+       */
+      transform: scale(1.08);
+      transform-origin: 62% 10%;
+    }
+  }
+
+  /* =========================================================
+     HERO CONTENT ANIMATIONS
+  ========================================================= */
+
+  .hero-eyebrow,
+  .hero-heading,
+  .hero-description,
+  .hero-actions,
+  .hero-meta {
+    opacity: 0;
+
+    animation: hero-content-reveal 0.8s
+      cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
+
+    will-change: transform, opacity;
+  }
+
+  .hero-eyebrow {
+    animation-delay: 0.12s;
+  }
+
+  .hero-heading {
+    animation-delay: 0.25s;
+  }
+
+  .hero-description {
+    animation-delay: 0.4s;
+  }
+
+  .hero-actions {
+    animation-delay: 0.54s;
+  }
+
+  .hero-meta {
+    animation-delay: 0.72s;
+  }
+
+  /* =========================================================
+     KEYFRAMES
+  ========================================================= */
+
+  @keyframes hero-image-reveal {
+    from {
+      opacity: 0;
+      transform: scale(1.045);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes hero-content-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* =========================================================
+     MOBILE ANIMATION CORRECTION
+  ========================================================= */
+
+  @media (max-width: 639px) {
+    @keyframes hero-image-reveal {
+      from {
+        opacity: 0;
+        transform: scale(1.13);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  /* =========================================================
+     ACCESSIBILITY
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image,
+    .hero-eyebrow,
+    .hero-heading,
+    .hero-description,
+    .hero-actions,
+    .hero-meta {
+      animation: none;
+      opacity: 1;
+    }
+
+    .hero-image {
+      transform: none;
+    }
+
+    .hero-eyebrow,
+    .hero-heading,
+    .hero-description,
+    .hero-actions,
+    .hero-meta {
+      transform: none;
+    }
+  }
+</style>

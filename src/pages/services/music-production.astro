@@ -3,6 +3,81 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 
+const siteUrl = "https://doremifusion.in";
+
+const title =
+  "Music Production Studio in Kolkata | Doremi Fusion";
+
+const description =
+  "Doremi Fusion is a music production studio in Kolkata offering music arrangement and production for songs, films, web-series, short films and jingles.";
+
+const canonical = `${siteUrl}/services/music-production`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ServicePage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: {
+        "@id": `${siteUrl}#website`,
+      },
+      mainEntity: {
+        "@id": `${canonical}#service`,
+      },
+      breadcrumb: {
+        "@id": `${canonical}#breadcrumb`,
+      },
+    },
+
+    {
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: "Music Production",
+      serviceType: "Music Production",
+      description:
+        "Music production and arrangement for songs, films, web-series, short films and jingles at Doremi Fusion in Kolkata.",
+      url: canonical,
+      provider: {
+        "@id": `${siteUrl}#organization`,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+      category: "Music Production",
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${siteUrl}/services`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Music Production",
+          item: canonical,
+        },
+      ],
+    },
+  ],
+};
+
 const serviceTypes = [
   {
     number: "01",
@@ -53,10 +128,17 @@ const process = [
 ---
 
 <Layout
-  title="Music Production Studio in Kolkata | Doremi Fusion"
-  description="Doremi Fusion offers music production and arrangement in Kolkata for songs, films, web-series, short films and jingles."
+  title={title}
+  description={description}
   canonical="/services/music-production"
-/>
+  ogImage="/images/studio/p4.webp"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
 
 <Navbar />
 
@@ -127,10 +209,10 @@ const process = [
 
         <div class="lg:col-span-8">
 
-          <p
+         <p
             class="mb-7 text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
           >
-            Music Production
+            Music Production Studio · Kolkata
           </p>
 
 
@@ -198,15 +280,14 @@ const process = [
             class="border-l border-white/[0.22] pl-7 sm:pl-9"
           >
 
-            <p
-              class="max-w-md text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
-            >
-              From a musical idea to a complete arrangement, Doremi Fusion
-              helps shape productions for songs, films, web-series, short
-              films and creative projects.
-            </p>
-
-          </div>
+           <p
+            class="max-w-md text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
+          >
+            Doremi Fusion is a music production studio in Kolkata helping artists
+            develop songs, arrangements and original music for films, web-series,
+            short films and creative projects.
+          </p>
+        </div>
 
 
           <a
@@ -861,72 +942,4 @@ const process = [
 
 
 <Footer />
-
-
-<!-- ===================================================== -->
-<!-- STRUCTURED DATA -->
-<!-- ===================================================== -->
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://doremifusion.in/services/music-production",
-        "url": "https://doremifusion.in/services/music-production",
-        "name": "Music Production Studio in Kolkata | Doremi Fusion",
-        "description": "Doremi Fusion offers music production and arrangement in Kolkata for songs, films, web-series, short films and jingles.",
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "Doremi Fusion",
-          "url": "https://doremifusion.in"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Music Production",
-        "serviceType": "Music Production",
-        "description": "Music production and arrangement for songs, films, web-series, short films and jingles.",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Doremi Fusion",
-          "url": "https://doremifusion.in",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kolkata",
-            "addressRegion": "West Bengal",
-            "addressCountry": "IN"
-          }
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Kolkata"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://doremifusion.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://doremifusion.in/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Music Production",
-            "item": "https://doremifusion.in/services/music-production"
-          }
-        ]
-      }
-    ]
-  }
-</script>
+</Layout>

@@ -10,23 +10,26 @@ import FinalCTA from "../components/FinalCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-<Navbar />
+<Layout
+  title="Doremi Fusion | Music Studio in Kolkata"
+  description="Doremi Fusion is a music studio in Kolkata offering professional recording, music production, mixing and mastering, music classes and jam sessions."
+  canonical="/"
+>
+  <Navbar />
 
- <main>
- 
- <Hero />
+  <main>
+    <Hero />
 
- <About />
+    <About />
 
- <ServicesPreview />
+    <ServicesPreview />
 
- <StudioProfile />
+    <StudioProfile />
 
- <StudioGallery />
+    <StudioGallery />
 
- <FinalCTA />
- </main>
+    <FinalCTA />
+  </main>
 
   <Footer />
 </Layout>

@@ -1,49 +1,139 @@
+---
+const services = [
+  {
+    number: "01",
+    title: "Recording",
+    description:
+      "Vocal recording, voiceovers, dubbing, instrumental tracking and live session recording in a professionally equipped studio.",
+    href: "/services/recording",
+    image: "/images/services/recording1.png",
+    imageAlt: "Music production setup at Doremi Fusion Music Studio in Kolkata",
+    imageLabel: "CAPTURE IDEAS",
+    sideLabel: "RECORD YOUR STORY",
+  },
+  {
+    number: "02",
+    title: "Music Production",
+    description:
+      "Complete music arrangement and production, including film scores, web-series music, short films and jingles.",
+    href: "/services/music-production",
+    image: "/images/services/d1.JPG",
+    imageAlt: "Music production setup at Doremi Fusion Music Studio",
+    imageLabel: "PRODUCE · ARRANGE · CREATE",
+    sideLabel: "IDEAS INTO MUSIC",
+  },
+  {
+    number: "03",
+    title: "Mixing & Mastering",
+    description:
+      "Professional mixing and mastering prepared for digital platforms including Spotify, Apple Music and YouTube.",
+    href: "/services/mixing-mastering",
+    image: "/images/services/mm.jpg",
+    imageAlt: "Audio mixing console at Doremi Fusion Music Studio",
+    imageLabel: "SHAPE YOUR SOUND",
+    sideLabel: "POLISH FOR A BIGGER STAGE",
+  },
+  {
+    number: "04",
+    title: "Music Classes",
+    description:
+      "Learn guitar, ukulele, drums and bass guitar in a fun, studio-based environment with experienced instructors.",
+    href: "/services/music-classes",
+    image: "/images/services/p7.JPG",
+    imageAlt: "Music class environment at Doremi Fusion Music Studio",
+    imageLabel: "MUSIC FOR A BRIGHTER YOU",
+    sideLabel: "LEARN · PRACTICE · IMPROVE",
+  },
+  {
+    number: "05",
+    title: "Jam Pad",
+    description:
+      "A fully equipped, soundproof rehearsal space for bands and artists, with a plug-and-play setup for rehearsals.",
+    href: "/services/jam-pad",
+    image: "/images/services/jam.jpg",
+    imageAlt: "Jam Pad rehearsal space at Doremi Fusion Music Studio",
+    imageLabel: "PLAY TOGETHER",
+    sideLabel: "BANDS · IDEAS · FRIENDS",
+  },
+];
+---
+
 <section
   id="services"
-  class="relative overflow-hidden bg-[#0d0d12] py-24 sm:py-36 lg:py-44"
+  class="relative overflow-hidden bg-[#0d0d12] py-24 sm:py-32 lg:py-40"
 >
-  <!-- Ambient glow -->
+  <!-- ========================================================= -->
+  <!-- AMBIENT BACKGROUND -->
+  <!-- ========================================================= -->
+
   <div
-    class="pointer-events-none absolute -left-48 top-1/3 h-96 w-96 rounded-full bg-[#d946ef]/[0.05] blur-[150px]"
+    class="pointer-events-none absolute -left-48 top-1/4 h-96 w-96 rounded-full bg-[#d946ef]/[0.045] blur-[150px]"
   ></div>
 
   <div
-    class="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-[#a855f7]/[0.03] blur-[140px]"
+    class="pointer-events-none absolute right-[-120px] top-1/2 h-96 w-96 rounded-full bg-[#a855f7]/[0.035] blur-[150px]"
   ></div>
+
+  <div
+    class="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#d946ef]/[0.025] blur-[140px]"
+  ></div>
+
 
   <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
     <!-- ========================================================= -->
-    <!-- SECTION INTRODUCTION -->
+    <!-- SECTION INTRO -->
     <!-- ========================================================= -->
 
-    <div class="service-reveal grid gap-10 lg:grid-cols-12 lg:items-end">
+    <div
+      class="service-reveal grid gap-10 lg:grid-cols-12 lg:items-end"
+    >
+
+      <!-- Heading -->
+
       <div class="lg:col-span-7">
+
         <p
-          class="mb-5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#d8b4fe] sm:mb-6 sm:text-xs sm:tracking-[0.38em]"
+          class="mb-5 text-[10px] font-medium uppercase tracking-[0.32em] text-[#d8b4fe] sm:mb-6 sm:text-xs sm:tracking-[0.38em]"
         >
-          What we do
+          Our Services
         </p>
 
         <h2
-          class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.045em] text-white sm:text-6xl lg:text-[5.8rem]"
+          class="max-w-4xl text-[2.8rem] font-semibold leading-[0.94] tracking-[-0.05em] text-white sm:text-6xl lg:text-[5.8rem]"
         >
           Sound built
 
-          <span class="block text-white/68">
+          <span class="block text-white/65">
             around your vision<span class="text-[#d946ef]">.</span>
           </span>
         </h2>
+
       </div>
 
+
+      <!-- Intro text -->
+
       <div class="lg:col-span-4 lg:col-start-9">
-        <p
-          class="max-w-md text-[15px] leading-7 text-white/78 sm:text-base sm:leading-8"
-        >
-          From the first recording session to the final master, Doremi Fusion
-          brings the tools, space and experience together to shape your sound.
-        </p>
+
+        <div class="flex gap-5">
+
+          <span
+            class="hidden h-16 w-px shrink-0 bg-gradient-to-b from-[#d8b4fe] to-transparent sm:block"
+          ></span>
+
+          <p
+            class="max-w-md text-[14px] leading-7 text-white/72 sm:text-base sm:leading-8"
+          >
+            From recording and music production to mixing, music classes and
+            jam sessions, Doremi Fusion brings together the space, tools and
+            experience musicians need to create in Kolkata.
+          </p>
+
+        </div>
+
       </div>
+
     </div>
 
 
@@ -53,258 +143,268 @@
 
     <div class="mt-16 sm:mt-24 lg:mt-28">
 
-      <!-- Recording -->
-      <a
-        href="/services/recording"
-        class="service-reveal service-delay-1 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
-      >
-        <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
-        >
-          <div class="row-start-1 lg:col-span-1">
-            <span
-              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
+      {
+        services.map((service, index) => {
+          const isEven = index % 2 === 1;
+
+          return (
+            <a
+              href={service.href}
+              class:list={[
+                "service-reveal",
+                "service-item",
+                `service-delay-${index + 1}`,
+                "group",
+                "relative",
+                "grid",
+                "items-center",
+                "gap-8",
+                "border-t",
+                "border-white/[0.11]",
+                "py-10",
+                "sm:gap-12",
+                "sm:py-14",
+                "lg:grid-cols-12",
+                "lg:gap-10",
+                "lg:py-16",
+                isEven ? "lg:[&_.service-image-wrap]:order-2" : "",
+                isEven ? "lg:[&_.service-content]:order-1" : "",
+              ]}
             >
-              01
-            </span>
-          </div>
 
-          <div class="col-start-2 row-start-1 lg:col-span-5">
-            <h3
-              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
-            >
-              Recording
-            </h3>
-          </div>
+              <!-- ================================================= -->
+              <!-- IMAGE -->
+              <!-- ================================================= -->
 
-          <div
-            class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
-          >
-            <p
-              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
-            >
-              Vocal recording, voiceovers, dubbing, instrumental tracking and
-              live session recording in a professionally equipped studio.
-            </p>
-          </div>
+              <div
+                class:list={[
+                  "service-image-wrap",
+                  "relative",
+                  "overflow-hidden",
+                  "lg:col-span-6",
+                  isEven ? "lg:col-start-7" : "lg:col-start-1",
+                ]}
+              >
 
-          <div
-            class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
-          >
-            <span
-              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
-            >
-              →
-            </span>
-          </div>
-        </div>
-      </a>
+                <!-- Decorative top line -->
+
+                <span
+                  class:list={[
+                    "absolute",
+                    "-top-px",
+                    "z-10",
+                    "h-px",
+                    "w-1/2",
+                    "bg-[#d8b4fe]/70",
+                    "transition-all",
+                    "duration-700",
+                    "group-hover:w-[70%]",
+                    isEven ? "right-0" : "left-0",
+                  ]}
+                ></span>
 
 
-      <!-- Music Production -->
-      <a
-        href="/services/music-production"
-        class="service-reveal service-delay-2 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
-      >
-        <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
-        >
-          <div class="row-start-1 lg:col-span-1">
-            <span
-              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
-            >
-              02
-            </span>
-          </div>
+                <!-- Decorative side line -->
 
-          <div class="col-start-2 row-start-1 lg:col-span-5">
-            <h3
-              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
-            >
-              Music Production
-            </h3>
-          </div>
-
-          <div
-            class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
-          >
-            <p
-              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
-            >
-              Complete music arrangement and production, including film
-              scores, web-series music, short films and jingles.
-            </p>
-          </div>
-
-          <div
-            class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
-          >
-            <span
-              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
-            >
-              →
-            </span>
-          </div>
-        </div>
-      </a>
+                <span
+                  class:list={[
+                    "absolute",
+                    "z-10",
+                    "h-1/2",
+                    "w-px",
+                    "bg-[#d8b4fe]/60",
+                    "transition-all",
+                    "duration-700",
+                    "group-hover:h-[70%]",
+                    isEven ? "right-0" : "left-0",
+                    "top-0",
+                  ]}
+                ></span>
 
 
-      <!-- Mixing & Mastering -->
-      <a
-        href="/services/mixing-mastering"
-        class="service-reveal service-delay-3 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
-      >
-        <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
-        >
-          <div class="row-start-1 lg:col-span-1">
-            <span
-              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
-            >
-              03
-            </span>
-          </div>
+                <!-- Image -->
 
-          <div class="col-start-2 row-start-1 lg:col-span-5">
-            <h3
-              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
-            >
-              Mixing & Mastering
-            </h3>
-          </div>
+                <div
+                  class="relative aspect-[4/3] overflow-hidden border border-white/[0.10] bg-[#111118]"
+                >
 
-          <div
-            class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
-          >
-            <p
-              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
-            >
-              Professional mixing and mastering prepared for digital
-              platforms including Spotify, Apple Music and YouTube.
-            </p>
-          </div>
-
-          <div
-            class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
-          >
-            <span
-              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
-            >
-              →
-            </span>
-          </div>
-        </div>
-      </a>
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+                  />
 
 
-      <!-- Music Classes -->
-      <a
-        href="/services/music-classes"
-        class="service-reveal service-delay-4 group block border-t border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
-      >
-        <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
-        >
-          <div class="row-start-1 lg:col-span-1">
-            <span
-              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
-            >
-              04
-            </span>
-          </div>
+                  <!-- Image overlay -->
 
-          <div class="col-start-2 row-start-1 lg:col-span-5">
-            <h3
-              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
-            >
-              Music Classes
-            </h3>
-          </div>
-
-          <div
-            class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
-          >
-            <p
-              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
-            >
-              Learn guitar, ukulele, drums and bass guitar in a fun,
-              studio-based environment with experienced instructors.
-            </p>
-          </div>
-
-          <div
-            class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
-          >
-            <span
-              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
-            >
-              →
-            </span>
-          </div>
-        </div>
-      </a>
+                  <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050506]/80 via-transparent to-[#050506]/10"
+                  ></div>
 
 
-      <!-- Jam Pad -->
-      <a
-        href="/services/jam-pad"
-        class="service-reveal service-delay-5 group block border-y border-white/[0.13] py-8 transition-all duration-500 hover:bg-white/[0.018] sm:py-10 lg:py-12"
-      >
-        <div
-          class="grid grid-cols-[auto_1fr_auto] gap-x-4 gap-y-4 lg:grid-cols-12 lg:items-center lg:gap-5"
-        >
-          <div class="row-start-1 lg:col-span-1">
-            <span
-              class="text-[11px] font-medium tracking-[0.2em] text-white/58 transition-colors duration-300 group-hover:text-[#d8b4fe] sm:text-xs"
-            >
-              05
-            </span>
-          </div>
+                  <!-- Image label -->
 
-          <div class="col-start-2 row-start-1 lg:col-span-5">
-            <h3
-              class="text-[1.75rem] font-medium leading-tight tracking-[-0.025em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-3xl lg:text-[3.4rem] lg:group-hover:translate-x-2"
-            >
-              Jam Pad
-            </h3>
-          </div>
+                  <div
+                    class="absolute bottom-5 left-5 right-5 flex items-end justify-between sm:bottom-6 sm:left-6 sm:right-6"
+                  >
 
-          <div
-            class="col-span-2 col-start-2 row-start-2 lg:col-span-5 lg:col-start-auto lg:row-start-auto"
-          >
-            <p
-              class="max-w-xl text-[15px] leading-7 text-white/72 transition-colors duration-300 group-hover:text-white/88 sm:text-base sm:leading-7"
-            >
-              A fully equipped, soundproof rehearsal space for bands and
-              artists, with a plug-and-play setup for rehearsals.
-            </p>
-          </div>
+                    <span
+                      class="text-[8px] font-medium uppercase tracking-[0.28em] text-white/90 sm:text-[9px] sm:tracking-[0.34em]"
+                    >
+                      {service.imageLabel}
+                    </span>
 
-          <div
-            class="col-start-3 row-start-1 text-right lg:col-span-1 lg:col-start-auto lg:row-start-auto"
-          >
-            <span
-              class="inline-block text-xl text-white/62 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#e879f9]"
-            >
-              →
-            </span>
-          </div>
-        </div>
-      </a>
+                    <span
+                      class="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-sm text-white/80 transition-all duration-300 group-hover:border-[#d946ef] group-hover:bg-[#a855f7]/10 group-hover:text-white"
+                    >
+                      ↗
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- ================================================= -->
+              <!-- CONTENT -->
+              <!-- ================================================= -->
+
+              <div
+                class:list={[
+                  "service-content",
+                  "relative",
+                  "lg:col-span-5",
+                  isEven ? "lg:col-start-1" : "lg:col-start-8",
+                ]}
+              >
+
+                <!-- Number -->
+
+                <div class="mb-5 flex items-center gap-4">
+
+                  <span
+                    class="text-[11px] font-medium tracking-[0.22em] text-[#d8b4fe] sm:text-xs"
+                  >
+                    {service.number}
+                  </span>
+
+                  <span
+                    class="h-px w-10 bg-white/20 transition-all duration-500 group-hover:w-16 group-hover:bg-[#d946ef]/70"
+                  ></span>
+
+                </div>
+
+
+                <!-- Title -->
+
+                <h3
+                  class="max-w-xl text-[2.1rem] font-medium leading-[1] tracking-[-0.04em] text-white transition-transform duration-500 ease-out group-hover:translate-x-1 sm:text-4xl lg:text-[3.2rem]"
+                >
+                  {service.title}
+                </h3>
+
+
+                <!-- Description -->
+
+                <p
+                  class="mt-5 max-w-lg text-[14px] leading-7 text-white/68 transition-colors duration-500 group-hover:text-white/85 sm:text-base sm:leading-8"
+                >
+                  {service.description}
+                </p>
+
+
+                <!-- Learn more -->
+
+                <div class="mt-7">
+
+                  <span
+                    class="inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.28em] text-[#d8b4fe] transition-colors duration-300 group-hover:text-[#e879f9] sm:text-[10px] sm:tracking-[0.32em]"
+                  >
+                    Learn More
+
+                    <span
+                      class="text-sm transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </span>
+
+                </div>
+
+
+                <!-- Side label -->
+
+                <div
+                  class:list={[
+                    "pointer-events-none",
+                    "absolute",
+                    "hidden",
+                    "xl:block",
+                    "top-1/2",
+                    "w-28",
+                    "-translate-y-1/2",
+                    isEven ? "right-[-155px]" : "left-[-155px]",
+                  ]}
+                >
+
+                  <span
+                    class="block text-[8px] font-medium uppercase leading-[1.9] tracking-[0.28em] text-[#d8b4fe]/80"
+                  >
+                    {service.sideLabel}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </a>
+          );
+        })
+      }
 
     </div>
 
 
     <!-- ========================================================= -->
-    <!-- BOTTOM CTA -->
+    <!-- BOTTOM STATEMENT -->
     <!-- ========================================================= -->
 
     <div
-      class="service-reveal service-delay-6 mt-12 flex justify-start sm:mt-16 sm:justify-end"
+      class="service-reveal service-delay-6 mt-12 border-t border-white/[0.11] pt-7 sm:mt-16 sm:pt-8"
     >
+
+      <div class="flex items-center gap-4">
+
+        <span
+          class="h-px w-8 bg-[#d946ef] sm:w-10"
+        ></span>
+
+        <p
+          class="text-[8px] font-medium uppercase tracking-[0.28em] text-white/55 sm:text-[10px] sm:tracking-[0.34em]"
+        >
+          Create · Rehearse · Record · Grow
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- EXPLORE ALL SERVICES -->
+    <!-- ========================================================= -->
+
+    <div
+      class="service-reveal service-delay-6 mt-10 flex justify-start sm:mt-12 sm:justify-end"
+    >
+
       <a
         href="/services"
-        class="group inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.16em] text-white/82 transition-colors duration-300 hover:text-white sm:gap-4 sm:tracking-[0.2em]"
+        class="group inline-flex items-center gap-4 text-[10px] font-medium uppercase tracking-[0.2em] text-white/75 transition-colors duration-300 hover:text-white sm:text-xs"
       >
         Explore all services
 
@@ -313,7 +413,9 @@
         >
           →
         </span>
+
       </a>
+
     </div>
 
   </div>
@@ -321,9 +423,14 @@
 
 
 <style>
+
+  /* =========================================================
+     REVEAL ANIMATION
+  ========================================================= */
+
   .service-reveal {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
 
     transition:
       opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
@@ -332,62 +439,129 @@
     will-change: opacity, transform;
   }
 
+
   .service-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
+
+
+  /* =========================================================
+     DELAYS
+  ========================================================= */
 
   .service-delay-1 {
     transition-delay: 0.04s;
   }
 
   .service-delay-2 {
-    transition-delay: 0.08s;
+    transition-delay: 0.10s;
   }
 
   .service-delay-3 {
-    transition-delay: 0.12s;
-  }
-
-  .service-delay-4 {
     transition-delay: 0.16s;
   }
 
+  .service-delay-4 {
+    transition-delay: 0.22s;
+  }
+
   .service-delay-5 {
-    transition-delay: 0.2s;
+    transition-delay: 0.28s;
   }
 
   .service-delay-6 {
-    transition-delay: 0.12s;
+    transition-delay: 0.16s;
   }
 
+
+  /* =========================================================
+     IMAGE HOVER
+  ========================================================= */
+
+  .service-image-wrap {
+    transition:
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  .service-item:hover .service-image-wrap {
+    transform: translateY(-3px);
+  }
+
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media (max-width: 1023px) {
+
+    .service-item {
+      grid-template-columns: 1fr;
+    }
+
+    .service-content {
+      order: 2;
+    }
+
+    .service-image-wrap {
+      order: 1;
+    }
+
+  }
+
+
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+
   @media (prefers-reduced-motion: reduce) {
+
     .service-reveal {
       opacity: 1;
       transform: none;
       transition: none;
     }
+
+    .service-item:hover .service-image-wrap {
+      transform: none;
+    }
+
   }
+
 </style>
 
 
 <script>
-  const elements = document.querySelectorAll(".service-reveal");
+  const serviceElements =
+    document.querySelectorAll(".service-reveal");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
-    },
-  );
+  const serviceObserver =
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
 
-  elements.forEach((element) => observer.observe(element));
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "is-visible",
+            );
+
+            serviceObserver.unobserve(
+              entry.target,
+            );
+
+          }
+
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      },
+    );
+
+  serviceElements.forEach((element) => {
+    serviceObserver.observe(element);
+  });
 </script>

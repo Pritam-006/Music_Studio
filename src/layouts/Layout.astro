@@ -6,13 +6,16 @@ interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = "Doremi Fusion | Music Studio & Recording Studio in Kolkata",
-  description = "Doremi Fusion is a music studio in Kolkata offering professional recording, music production, mixing and mastering, music classes, and jam sessions.",
+  title = "Doremi Fusion | Music Studio in Kolkata",
+  description =
+    "Doremi Fusion is a music studio in Kolkata offering professional recording, music production, mixing and mastering, music classes and jam sessions.",
   canonical,
   ogImage = "/images/studio/p2.webp",
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = "https://doremifusion.in";
@@ -27,6 +30,10 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ========================================================= -->
+    <!-- BASIC DOCUMENT META -->
+    <!-- ========================================================= -->
+
     <meta charset="UTF-8" />
 
     <meta
@@ -41,24 +48,52 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
 
     <meta
       name="robots"
-      content="index, follow"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
     />
 
+    <meta
+      name="theme-color"
+      content="#08080a"
+    />
+
+    <title>{title}</title>
+
+    <!-- Canonical URL -->
     <link
       rel="canonical"
       href={canonicalUrl}
     />
 
-    <title>{title}</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- ========================================================= -->
+    <!-- FAVICON -->
+    <!-- ========================================================= -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/branding/doremi-logo.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="/images/branding/doremi-logo.png"
+    />
 
     <!-- ========================================================= -->
     <!-- OPEN GRAPH -->
+    <!-- Used when pages are shared on Facebook, WhatsApp, etc. -->
     <!-- ========================================================= -->
 
     <meta
       property="og:type"
       content="website"
+    />
+
+    <meta
+      property="og:site_name"
+      content="Doremi Fusion"
     />
 
     <meta
@@ -77,8 +112,8 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
     />
 
     <meta
-      property="og:site_name"
-      content="Doremi Fusion Music Studio"
+      property="og:locale"
+      content="en_IN"
     />
 
     <meta
@@ -91,49 +126,42 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
       content="Doremi Fusion Music Studio in Kolkata"
     />
 
+    <!-- ========================================================= -->
+    <!-- WEBSITE STRUCTURED DATA -->
+    <!-- Helps search engines understand the website/entity -->
+    <!-- ========================================================= -->
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Doremi Fusion",
+      "alternateName": "Doremi Fusion Music Studio",
+      "url": `${siteUrl}/`
+    })} />
 
     <!-- ========================================================= -->
-    <!-- TWITTER / X -->
+    <!-- ORGANIZATION / SOCIAL PROFILES -->
     <!-- ========================================================= -->
 
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${siteUrl}#organization`,
+      "name": "Doremi Fusion",
+      "url": `${siteUrl}/`,
+      "logo": `${siteUrl}/images/branding/doremi-logo.png`,
+      "sameAs": [
+        "https://www.instagram.com/doremifusion/",
+        "https://www.facebook.com/doremifusion/"
+      ]
+    })} />
 
-    <meta
-      name="twitter:title"
-      content={title}
-    />
-
-    <meta
-      name="twitter:description"
-      content={description}
-    />
-
-    <meta
-      name="twitter:image"
-      content={ogImageUrl}
-    />
-
-
-    <!-- Theme -->
-
-    <meta
-      name="theme-color"
-      content="#08080a"
-    />
-
-    <link
-      rel="icon"
-      href="/images/branding/doremi-logo.png"
-    />
-
-    <!-- Page-specific head content -->
+    <!-- ========================================================= -->
+    <!-- PAGE-SPECIFIC HEAD CONTENT -->
+    <!-- ========================================================= -->
 
     <slot name="head" />
   </head>
-
 
   <body>
     <slot />

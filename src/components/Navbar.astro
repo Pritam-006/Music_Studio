@@ -17,6 +17,8 @@ const navItems = [
     href: "/contact",
   },
 ];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
 <header
@@ -51,19 +53,34 @@ const navItems = [
       aria-label="Main navigation"
     >
       {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class="group relative py-2 text-sm font-medium uppercase tracking-[0.14em] text-white/65 transition-colors duration-300 hover:text-white"
-          >
-            {item.label}
+        navItems.map((item) => {
+          const itemPath = item.href.replace(/\/$/, "") || "/";
+          const isActive =
+            currentPath === itemPath ||
+            (itemPath !== "/" && currentPath.startsWith(`${itemPath}/`));
 
-            <!-- Hover line -->
-            <span
-              class="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-[#a855f7] to-[#d946ef] transition-all duration-300 ease-out group-hover:w-full"
-            ></span>
-          </a>
-        ))
+          return (
+            <a
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+              class:list={[
+                "group relative py-2 text-sm font-medium uppercase tracking-[0.14em] transition-colors duration-300",
+                isActive
+                  ? "text-white"
+                  : "text-white/65 hover:text-white",
+              ]}
+            >
+              {item.label}
+
+              <span
+                class:list={[
+                  "absolute bottom-0 left-0 h-px bg-gradient-to-r from-[#a855f7] to-[#d946ef] transition-all duration-300 ease-out",
+                  isActive ? "w-full" : "w-0 group-hover:w-full",
+                ]}
+              ></span>
+            </a>
+          );
+        })
       }
     </nav>
 
@@ -75,17 +92,20 @@ const navItems = [
     <button
       type="button"
       id="mobile-menu-button"
-      class="group flex h-10 w-10 items-center justify-center text-white/75 transition-all duration-300 hover:text-white md:hidden"
+      class="relative flex h-10 w-10 items-center justify-center text-white/75 transition-colors duration-300 hover:text-white md:hidden"
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <!-- Menu icon -->
+      <!-- ======================================================= -->
+      <!-- HAMBURGER ICON -->
+      <!-- ======================================================= -->
+
       <svg
         id="menu-icon"
         xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
+        width="21"
+        height="21"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -93,27 +113,31 @@ const navItems = [
         stroke-linecap="round"
         aria-hidden="true"
       >
-        <path d="M4 7h16" />
-        <path d="M4 12h16" />
-        <path d="M4 17h16" />
+        <path d="M4 7h16"></path>
+        <path d="M4 12h16"></path>
+        <path d="M4 17h16"></path>
       </svg>
 
-      <!-- Close icon -->
+
+      <!-- ======================================================= -->
+      <!-- CLOSE ICON -->
+      <!-- ======================================================= -->
+
       <svg
         id="close-icon"
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="21"
+        height="21"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         stroke-width="1.5"
         stroke-linecap="round"
-        class="hidden"
         aria-hidden="true"
+        hidden
       >
-        <path d="M6 6l12 12" />
-        <path d="M18 6L6 18" />
+        <path d="M6 6l12 12"></path>
+        <path d="M18 6L6 18"></path>
       </svg>
     </button>
   </div>
@@ -132,24 +156,45 @@ const navItems = [
       aria-label="Mobile navigation"
     >
       {
-        navItems.map((item, index) => (
-          <a
-            href={item.href}
-            class="mobile-nav-link group flex items-center justify-between border-b border-white/[0.08] py-5 text-base font-medium uppercase tracking-[0.14em] text-white/70 transition-colors duration-300 hover:text-white"
-            style={`transition-delay: ${index * 50}ms`}
-          >
-            <span>{item.label}</span>
+        navItems.map((item) => {
+          const itemPath = item.href.replace(/\/$/, "") || "/";
+          const isActive =
+            currentPath === itemPath ||
+            (itemPath !== "/" && currentPath.startsWith(`${itemPath}/`));
 
-            <span
-              class="text-sm text-[#d8b4fe] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+          return (
+            <a
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+              class:list={[
+                "mobile-nav-link group flex items-center justify-between border-b border-white/[0.08] py-5 text-base font-medium uppercase tracking-[0.14em] transition-colors duration-300",
+                isActive
+                  ? "text-white"
+                  : "text-white/70 hover:text-white",
+              ]}
             >
-              →
-            </span>
-          </a>
-        ))
+              <span>{item.label}</span>
+
+              <span
+                class:list={[
+                  "text-sm text-[#d8b4fe] transition-all duration-300",
+                  isActive
+                    ? "translate-x-1 opacity-100"
+                    : "opacity-0 group-hover:translate-x-1 group-hover:opacity-100",
+                ]}
+              >
+                →
+              </span>
+            </a>
+          );
+        })
       }
 
-      <!-- Mobile footer text -->
+
+      <!-- ======================================================= -->
+      <!-- MOBILE FOOTER -->
+      <!-- ======================================================= -->
+
       <div class="mt-9 flex items-center gap-3">
         <span class="h-px w-7 bg-[#a855f7]/60"></span>
 
@@ -163,6 +208,10 @@ const navItems = [
   </div>
 </header>
 
+
+<!-- ========================================================= -->
+<!-- MOBILE MENU SCRIPT -->
+<!-- ========================================================= -->
 
 <script>
   const menuButton = document.querySelector(
@@ -185,12 +234,45 @@ const navItems = [
     ".mobile-nav-link",
   );
 
-  if (menuButton && mobileMenu && menuIcon && closeIcon) {
-    const setMenuState = (open: boolean) => {
-      mobileMenu.classList.toggle("hidden", !open);
 
-      menuIcon.classList.toggle("hidden", open);
-      closeIcon.classList.toggle("hidden", !open);
+  if (
+    menuButton &&
+    mobileMenu &&
+    menuIcon &&
+    closeIcon
+  ) {
+
+    /* =========================================================
+       SET MENU STATE
+    ========================================================= */
+
+    const setMenuState = (open: boolean) => {
+
+      /* -----------------------------------------
+         Mobile menu
+      ----------------------------------------- */
+
+      mobileMenu.classList.toggle(
+        "hidden",
+        !open,
+      );
+
+
+      /* -----------------------------------------
+         Icons
+
+         IMPORTANT:
+         Use native hidden property instead
+         of relying only on Tailwind .hidden.
+      ----------------------------------------- */
+
+      menuIcon.hidden = open;
+      closeIcon.hidden = !open;
+
+
+      /* -----------------------------------------
+         Accessibility
+      ----------------------------------------- */
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -203,25 +285,162 @@ const navItems = [
           ? "Close navigation menu"
           : "Open navigation menu",
       );
+
+
+      /* -----------------------------------------
+         Prevent background scrolling
+         while mobile menu is open.
+      ----------------------------------------- */
+
+      if (window.innerWidth < 768) {
+        document.body.style.overflow = open
+          ? "hidden"
+          : "";
+      }
     };
 
-    menuButton.addEventListener("click", () => {
-      const isOpen =
-        menuButton.getAttribute("aria-expanded") === "true";
 
-      setMenuState(!isOpen);
-    });
+    /* =========================================================
+       INITIAL STATE
+    ========================================================= */
+
+    setMenuState(false);
+
+
+    /* =========================================================
+       TOGGLE MENU
+    ========================================================= */
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        const isOpen =
+          menuButton.getAttribute(
+            "aria-expanded",
+          ) === "true";
+
+        setMenuState(!isOpen);
+      },
+    );
+
+
+    /* =========================================================
+       CLOSE AFTER CLICKING A LINK
+    ========================================================= */
 
     mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        setMenuState(false);
-      });
+
+      link.addEventListener(
+        "click",
+        () => {
+          setMenuState(false);
+        },
+      );
+
     });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        setMenuState(false);
-      }
-    });
+
+    /* =========================================================
+       ESCAPE KEY
+    ========================================================= */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape" &&
+          menuButton.getAttribute(
+            "aria-expanded",
+          ) === "true"
+        ) {
+
+          setMenuState(false);
+
+          menuButton.focus();
+        }
+
+      },
+    );
+
+
+    /* =========================================================
+       CLOSE WHEN RESIZING TO DESKTOP
+    ========================================================= */
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        if (window.innerWidth >= 768) {
+          setMenuState(false);
+        }
+
+      },
+    );
+
   }
 </script>
+
+
+<!-- ========================================================= -->
+<!-- NAVBAR STYLES -->
+<!-- ========================================================= -->
+
+<style>
+
+  /*
+    Native hidden attribute must always win.
+
+    This prevents another global SVG rule from
+    accidentally making the close icon visible.
+  */
+
+  #mobile-menu-button svg[hidden] {
+    display: none !important;
+  }
+
+
+  /*
+    Keep both icons perfectly centered.
+  */
+
+  #mobile-menu-button svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+
+  /*
+    Prevent the button from changing size when
+    switching between hamburger and close.
+  */
+
+  #mobile-menu-button {
+    position: relative;
+  }
+
+
+  /*
+    Small interaction feedback.
+  */
+
+  #mobile-menu-button:active {
+    transform: scale(0.94);
+  }
+
+
+  /*
+    Respect reduced-motion preference.
+  */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    #mobile-menu-button {
+      transition: none;
+    }
+
+  }
+
+</style>

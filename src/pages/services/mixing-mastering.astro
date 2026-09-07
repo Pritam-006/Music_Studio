@@ -3,6 +3,79 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 
+const siteUrl = "https://doremifusion.in";
+
+const title =
+  "Mixing & Mastering Studio in Kolkata | Doremi Fusion";
+
+const description =
+  "Doremi Fusion is a music mixing and mastering studio in Kolkata for songs and digital releases, with music prepared for Spotify, Apple Music and YouTube.";
+
+const canonical = `${siteUrl}/services/mixing-mastering`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ServicePage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: {
+        "@id": `${siteUrl}#website`,
+      },
+      mainEntity: {
+        "@id": `${canonical}#service`,
+      },
+      breadcrumb: {
+        "@id": `${canonical}#breadcrumb`,
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: "Mixing & Mastering",
+      serviceType: "Music Mixing and Mastering",
+      description:
+        "Professional music mixing and mastering for songs and digital releases at Doremi Fusion in Kolkata.",
+      url: canonical,
+      provider: {
+        "@id": `${siteUrl}#organization`,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Kolkata",
+      },
+      category: "Music Mixing and Mastering",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${siteUrl}/services`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Mixing & Mastering",
+          item: canonical,
+        },
+      ],
+    },
+  ],
+};
+
 const serviceTypes = [
   {
     number: "01",
@@ -53,10 +126,17 @@ const process = [
 ---
 
 <Layout
-  title="Mixing & Mastering Studio in Kolkata | Doremi Fusion"
-  description="Doremi Fusion offers professional music mixing and mastering in Kolkata for songs and digital releases, including Spotify, Apple Music and YouTube."
+  title={title}
+  description={description}
   canonical="/services/mixing-mastering"
-/>
+  ogImage="/images/studio/p5.webp"
+>
+  <Fragment slot="head">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </Fragment>
 
 <Navbar />
 
@@ -126,10 +206,10 @@ const process = [
         <div class="lg:col-span-8">
 
           <p
-            class="mb-7 text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
-          >
-            Mixing & Mastering
-          </p>
+          class="mb-7 text-xs font-medium uppercase tracking-[0.34em] text-[#c875ff]"
+        >
+          Mixing & Mastering Studio · Kolkata
+        </p>
 
 
           <h1
@@ -196,12 +276,10 @@ const process = [
             class="border-l border-white/[0.22] pl-7 sm:pl-9"
           >
 
-            <p
-              class="max-w-md text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9"
-            >
-              A finished production needs more than good individual sounds.
-              Mixing and mastering bring the elements together and prepare
-              your music for the platforms where people will hear it.
+           <p class="max-w-md text-base leading-8 text-[#9698a1] sm:text-lg sm:leading-9">
+              Doremi Fusion is a music mixing and mastering studio in Kolkata
+              helping artists shape balanced, clear and release-ready music for
+              digital platforms.
             </p>
 
           </div>
@@ -804,9 +882,7 @@ const process = [
       <h2
         class="mt-6 max-w-5xl text-5xl font-medium leading-[0.95] tracking-[-0.05em] text-[#f5f5f7] sm:text-6xl lg:text-7xl"
       >
-        Ready for the
-
-        <span class="text-[#777983]">
+        Ready for the <span class="text-[#777983]">
           final sound?
         </span>
       </h2>
@@ -820,17 +896,18 @@ const process = [
       </p>
 
 
-      <a
-        href="/contact"
-        class="mt-10 inline-flex items-center gap-4 rounded-full bg-[#f5f5f7] px-7 py-3.5 text-sm font-medium text-[#07080d] transition-all duration-300 hover:bg-[#e8c9f7]"
-      >
-        Discuss your project
+        <a
+            href="/contact"
+            class="mt-10 inline-flex items-center gap-4 rounded-full border border-[#9b55c9]/60 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#e7e7eb] transition-all duration-300 hover:border-[#c875ff] hover:bg-purple-500/[0.06]"
+          >
 
-        <span>
-          ↗
-        </span>
+            Discuss Your Project
 
-      </a>
+            <span class="text-base text-[#c875ff]">
+              ↗
+            </span>
+
+          </a>
 
     </div>
 
@@ -838,74 +915,5 @@ const process = [
 
 </main>
 
-
 <Footer />
-
-
-<!-- ===================================================== -->
-<!-- STRUCTURED DATA -->
-<!-- ===================================================== -->
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://doremifusion.in/services/mixing-mastering",
-        "url": "https://doremifusion.in/services/mixing-mastering",
-        "name": "Mixing & Mastering Studio in Kolkata | Doremi Fusion",
-        "description": "Doremi Fusion offers professional music mixing and mastering in Kolkata for songs and digital releases.",
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "Doremi Fusion",
-          "url": "https://doremifusion.in"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Mixing & Mastering",
-        "serviceType": "Music Mixing and Mastering",
-        "description": "Professional music mixing and mastering for songs and digital releases.",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Doremi Fusion",
-          "url": "https://doremifusion.in",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kolkata",
-            "addressRegion": "West Bengal",
-            "addressCountry": "IN"
-          }
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Kolkata"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://doremifusion.in/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://doremifusion.in/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Mixing & Mastering",
-            "item": "https://doremifusion.in/services/mixing-mastering"
-          }
-        ]
-      }
-    ]
-  }
-</script>
+</Layout>
